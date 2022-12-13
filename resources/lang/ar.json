@@ -32,5 +32,11 @@
   "Are you sure?": "هل متأكد ؟",
   "You wont be able to revert this!": "لا يمكنك استرجاع ذلك !",
   "Yes, delete it!": "! نعم ، حذف ",
-  "Deleted!": "تم الحذف بنجاح ."
+  "Deleted!": "تم الحذف بنجاح .",
+  "plate_number": "رقم اللوحه",
+  "truck_type": "نوع الشاحنه",
+  "truck_model": "موديل الشاحنه",
+  "admin-panel": "لوحه التحكم",
+  "back": "رجوع",
+  "submit": "حفظ"
 }

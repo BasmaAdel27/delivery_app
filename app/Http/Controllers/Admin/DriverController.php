@@ -20,7 +20,7 @@ class DriverController extends Controller
 
     public function create()
     {
-        $trucks=Truck::pluck('id','plate_number');
+        $trucks=Truck::doesntHave('driver')->pluck('plate_number', 'id');;
         return view('admin.drivers.create',compact('trucks'));
     }
 
@@ -42,7 +42,8 @@ class DriverController extends Controller
 
     public function edit(User $driver)
     {
-        $trucks=Truck::pluck('id','plate_number');
+        $trucks=Truck::doesntHave('driver')
+              ->orWhereHas('driver', fn ($q) => $q->where('truck_id', $driver->truck_id))->pluck('plate_number', 'id');
         return view('admin.drivers.edit',compact('driver','trucks'));
     }
 
