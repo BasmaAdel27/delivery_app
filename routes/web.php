@@ -12,7 +12,7 @@ Auth::routes([
       'register' => false,
       'verify' => false,
 ]);
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->middleware(['SuperAdmin'])->name('home');
 Route::group(
       [
             'prefix' => LaravelLocalization::setLocale(),
