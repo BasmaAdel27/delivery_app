@@ -17,9 +17,9 @@ class Order extends Model
     const STATUSES = [self::PENDING, self::DELIVERED,self::CANCELED];
 
 
-    public function truck()
+    public function user()
     {
-        return $this->belongsTo(Truck::class);
+        return $this->belongsTo(User::class);
     }
 
     public function customer()
