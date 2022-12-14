@@ -3,13 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\HomeRequest;
 use App\Http\Resources\Api\HomeResource;
 use App\Http\Resources\PaginationResource;
 use App\Models\Order;
-use GuzzleHttp\Psr7\Request;
-use Illuminate\Support\Facades\Lang;
-use stdClass;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
