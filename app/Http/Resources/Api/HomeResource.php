@@ -13,11 +13,15 @@ class HomeResource extends JsonResource
     public function toArray($request)
     {
         return [
-            // 'slides' => SlideResource::collection($this->slides),
-            'health_info' => UserInfoResource::make($this->userInfo),
-            'meal'  => MealResource::make($this->meal),
-            'video'    => VideoResource::make($this->video),
-            'society' => $this->society,
+            'id' => $this->id,
+            'order_number' => $this->order_number,
+            'price' => $this->price,
+            'order_weight' => $this->id,
+            'order_quantity' => $this->id,
+            'moves_number' => $this->id,
+            'lat' => $this->lat,
+            'lng' => $this->lng,
+            'status' => $this->status
         ];
     }
 }

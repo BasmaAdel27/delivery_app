@@ -29,6 +29,6 @@ class Order extends Model
     public function setStatusAttribute($value)
     {
         $this->attributes['status_ar'] = trans($value);
-        $this->attributes['order_status'] = $value;
+        $this->attributes['status'] = $value;
     }
 }
