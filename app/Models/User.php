@@ -24,10 +24,10 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, HasTimestampTrait;
 
-    const ADMIN='admin';
-    const DRIVER='driver';
+    const ADMIN = 'admin';
+    const DRIVER = 'driver';
 
-    const types=[self::ADMIN,self::DRIVER];
+    const types = [self::ADMIN, self::DRIVER];
 
     /**
      * The attributes that are mass assignable.
@@ -42,8 +42,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
-        'remember_token',
+          'password',
+          'remember_token',
     ];
 
     /**
@@ -52,20 +52,19 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+          'email_verified_at' => 'datetime',
     ];
-
-
-
 
 
     public function truck()
     {
-        return $this->belongsTo(Truck::class);
+        return $this->hasOne(Truck::class);
     }
 
-    public function orders(){
-        $this->hasMany(Order::class,'driver_id');
+
+    public function orders()
+    {
+        $this->hasMany(Order::class, 'driver_id');
     }
 
 }

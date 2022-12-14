@@ -9,10 +9,12 @@ use Illuminate\Database\Eloquent\Model;
 class Truck extends Model
 {
     use HasFactory, HasTimestampTrait;
-    protected $fillable=['plate_number','truck_type','truck_model','license_number','License_expiry'];
+
+    protected $fillable = ['plate_number', 'truck_type', 'truck_model', 'license_number', 'License_expiry'];
 
 
-    public function driver(){
-       return $this->hasOne(User::class,'truck_id');
+    public function driver()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
