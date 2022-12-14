@@ -20,9 +20,18 @@ class OrdersDataTable extends DataTable
                   return $query->user?->first_name .' '. $query->user?->last_name;
               })->editColumn('customer.first_name', function ($query) {
                   return $query->customer?->first_name .' '. $query->customer?->last_name;
+              }) ->editColumn('order_status', function ($query) {
+                  if (app()->getLocale() == 'ar') {
+                      return $query->status_ar;
+                  } else {
+                      return $query->order_status;
+                  }
               })->editColumn('Action', function ($query) {
                   return view('admin.orders.datatable.action', compact('query'));
-              })->rawColumns(['Action']);    }
+              })->editColumn('status', function ($query) {
+                  return view('admin.orders.datatable.status', compact('query'));
+              })->rawColumns(['status','Action']);
+    }
 
 
     public function query($model)
@@ -55,13 +64,13 @@ class OrdersDataTable extends DataTable
               Column::make('order_number')->orderable(true)->title(trans('order_number')),
               Column::make('customer.first_name')->orderable(true)->title(trans('customer_name')),
               Column::make('user.first_name')->orderable(true)->title(trans('driver_name')),
-              Column::make('contact_number')->orderable(true)->title(trans('contact_number')),
-              Column::make('phone')->orderable(true)->title(trans('phone')),
-              Column::make('address')->orderable(true)->title(trans('address')),
-              Column::make('district_name')->orderable(true)->title(trans('district_name')),
-              Column::make('build_number')->orderable(true)->title(trans('build_number')),
+              Column::make('order_weight')->orderable(true)->title(trans('order_weight')),
+              Column::make('order_quantity')->orderable(true)->title(trans('order_quantity')),
+              Column::make('price')->orderable(true)->title(trans('price')),
+              Column::make('moves_number')->orderable(true)->title(trans('moves_number')),
               Column::make('created_at')->title(trans('created_at')),
               Column::make('updated_at')->title(trans('updated_at')),
+              Column::make('status')->title(trans('status'))->searchable(false)->orderable(false),
               Column::make('Action')->title(trans('action'))->searchable(false)->orderable(false)
         ];
     }

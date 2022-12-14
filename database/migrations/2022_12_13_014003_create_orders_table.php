@@ -24,6 +24,7 @@ class CreateOrdersTable extends Migration
             $table->string('end_lat');
             $table->string('end_lang');
             $table->string('order_status')->default('pending');
+            $table->string('status_ar')->default('قيد الانتظار');
             $table->foreignId('driver_id')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignId('customer_id')->nullable()->constrained('customers')->nullOnDelete();
             $table->timestamps();

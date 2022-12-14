@@ -26,4 +26,9 @@ class Order extends Model
     {
         return $this->belongsTo(Customer::class);
     }
+    public function setStatusAttribute($value)
+    {
+        $this->attributes['status_ar'] = trans($value);
+        $this->attributes['order_status'] = $value;
+    }
 }
