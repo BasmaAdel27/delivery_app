@@ -20,7 +20,8 @@ class CustomersDataTable extends DataTable
                   return $query->first_name .' '. $query->last_name;
             })->editColumn('Action', function ($query) {
                   return view('admin.customers.datatable.action', compact('query'));
-            })->rawColumns(['first_name','Action']);    }
+            })->rawColumns(['first_name','Action']);
+    }
 
 
     public function query()

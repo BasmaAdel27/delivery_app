@@ -16,8 +16,13 @@ class OrdersDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
-            ->addColumn('action', 'admin/ordersdatatable.action');
-    }
+              ->editColumn('user.first_name', function ($query) {
+                  return $query->user?->first_name .' '. $query->user?->last_name;
+              })->editColumn('customer.first_name', function ($query) {
+                  return $query->customer?->first_name .' '. $query->customer?->last_name;
+              })->editColumn('Action', function ($query) {
+                  return view('admin.orders.datatable.action', compact('query'));
+              })->rawColumns(['Action']);    }
 
 
     public function query($model)
@@ -47,9 +52,9 @@ class OrdersDataTable extends DataTable
     {
         return [
               Column::make('id')->title(trans('ID')),
-              Column::make('first_name')->orderable(true)->title(trans('name')),
-              Column::make('company_name')->orderable(true)->title(trans('company_name')),
-              Column::make('commercial_register')->orderable(true)->title(trans('commercial_register')),
+              Column::make('order_number')->orderable(true)->title(trans('order_number')),
+              Column::make('customer.first_name')->orderable(true)->title(trans('customer_name')),
+              Column::make('user.first_name')->orderable(true)->title(trans('driver_name')),
               Column::make('contact_number')->orderable(true)->title(trans('contact_number')),
               Column::make('phone')->orderable(true)->title(trans('phone')),
               Column::make('address')->orderable(true)->title(trans('address')),
