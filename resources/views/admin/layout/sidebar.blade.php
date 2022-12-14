@@ -28,7 +28,7 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="#">
+      <a class="nav-link" href="{{route('admin.orders.index')}}">
         <i class="mdi mdi-contacts menu-icon"></i>
         <span class="menu-title">@lang('orders')</span>
       </a>

@@ -70,6 +70,7 @@ class OrdersDataTable extends DataTable
               Column::make('moves_number')->orderable(true)->title(trans('moves_number')),
               Column::make('created_at')->title(trans('created_at')),
               Column::make('updated_at')->title(trans('updated_at')),
+              Column::make('order_status')->orderable(true)->title(trans('order_status')),
               Column::make('status')->title(trans('status'))->searchable(false)->orderable(false),
               Column::make('Action')->title(trans('action'))->searchable(false)->orderable(false)
         ];

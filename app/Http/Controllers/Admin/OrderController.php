@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\DataTables\Admin\OrdersDataTable;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function index(OrdersDataTable $ordersDataTable)
     {
-        //
+        return $ordersDataTable->render('admin.orders.index');
     }
 
     /**
