@@ -18,12 +18,12 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->integer('order_number')->unique()->nullable();
             $table->float('price');
-            $table->string('order_weight');
-            $table->integer('order_quantity');
+            $table->string('weight');
+            $table->integer('quantity');
             $table->integer('moves_number');
-            $table->string('end_lat');
-            $table->string('end_lang');
-            $table->string('order_status')->default('pending');
+            $table->string('lat');
+            $table->string('lng');
+            $table->string('status')->default('pending');
             $table->foreignId('driver_id')->nullable()->constrained('users')->nullOnDelete();
             $table->foreignId('customer_id')->nullable()->constrained('customers')->nullOnDelete();
             $table->timestamps();
