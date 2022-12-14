@@ -28,13 +28,14 @@ class AuthController extends Controller
 
         if (!$user) return failedResponse(Lang::get('user_not_found'));
 
-
-
-
-        $user->update(['firebase_token' => $request->firebase_token]);
-        $user->token = $user->createToken('village_diet')->plainTextToken;
-
-        return successResponse(AuthResource::make($user));
+        $credentials = $request->only('phone', 'password');
+        if (Auth::attempt($credentials)) {
+                  $request->firebase_token ?? $user->update(['firebase_token' => $request->firebase_token]);
+            $user->token = $user->createToken('village_diet')->plainTextToken;
+            return successResponse(AuthResource::make($user), message: "login successfully");
+        } else {
+            return failedResponse(Lang::get('user_not_found'));
+        }
     }
 
 

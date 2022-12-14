@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('identity_number')->unique()->nullable();
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
-            $table->integer('license_number')->unique()->nullable();
+            $table->string('license_number')->unique()->nullable();
             $table->date('License_expiry')->nullable();
             $table->string('password')->nullable();
             $table->string('firebase_token')->nullable();
