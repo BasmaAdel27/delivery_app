@@ -20,8 +20,7 @@ class CreateOrdersTable extends Migration
             $table->float('price');
             $table->string('order_weight');
             $table->integer('order_quantity');
-            $table->string('start_lat');
-            $table->string('start_lang');
+            $table->integer('moves_number');
             $table->string('end_lat');
             $table->string('end_lang');
             $table->string('order_status')->default('pending');
