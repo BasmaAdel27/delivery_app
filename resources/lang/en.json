@@ -38,5 +38,11 @@
   "truck_model": "Truck Model",
   "admin-panel": "Admin Panel",
   "back": "Back",
-  "submit": "Submit"
+  "submit": "Submit",
+  "company_name": "Company Name",
+  "commercial_register": "Commercial Register",
+  "contact_number": "Contact Number",
+  "district_name": "District Name",
+  "build_number": "Build Number",
+  "Cancel": "Cancel"
 }

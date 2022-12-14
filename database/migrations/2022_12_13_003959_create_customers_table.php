@@ -21,7 +21,7 @@ class CreateCustomersTable extends Migration
             $table->string('company_name')->nullable();
             $table->string('contact_number')->nullable();
             $table->string('address')->nullable();
-            $table->string('commercial_register')->nullable();
+            $table->string('commercial_register')->unique()->nullable();
             $table->string('district_name')->nullable();
             $table->integer('build_number')->nullable();
             $table->timestamps();

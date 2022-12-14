@@ -38,5 +38,11 @@
   "truck_model": "موديل الشاحنه",
   "admin-panel": "لوحه التحكم",
   "back": "رجوع",
-  "submit": "حفظ"
+  "submit": "حفظ",
+  "company_name": "اسم الشركة",
+  "commercial_register": "السجل التجاري",
+  "contact_number": "رقم التواصل",
+  "district_name": "اسم الحي",
+  "build_number": "رقم المبنى",
+  "Cancel": "إلغاء"
 }

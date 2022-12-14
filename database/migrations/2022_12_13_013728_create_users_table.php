@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('identification_Number')->unique()->nullable();
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
-            $table->integer('license_number')->nullable();
+            $table->integer('license_number')->unique()->nullable();
             $table->date('License_expiry')->nullable();
             $table->foreignId('truck_id')->nullable()->constrained('trucks')->nullOnDelete();
             $table->string('password')->nullable();

@@ -10,6 +10,7 @@
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
     confirmButtonText: "@lang('Yes, delete it!')",
+    cancelButtonText:"@lang('Cancel')",
   }).then((result) => {
     if (result.isConfirmed) {
       form.submit();
