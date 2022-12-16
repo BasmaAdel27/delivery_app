@@ -3,13 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\HomeRequest;
 use App\Http\Resources\Api\HomeResource;
 use App\Http\Resources\PaginationResource;
 use App\Models\Order;
-use GuzzleHttp\Psr7\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
-use stdClass;
 
 class HomeController extends Controller
 {
@@ -21,7 +19,19 @@ class HomeController extends Controller
               ->paginate($request->per_page ?? 15);
 
         return successResponse(HomeResource::collection($orders), PaginationResource::make($orders));
+    }
 
+    public function updateOrder(Request $request, $id)
+    {
+        $order = Order::where(['driver_id' => auth()->id()])->findOrFail($id);
+        if ($order->status == Order::DELIVERED) {
+            return failedResponse(Lang::get('can_not_updated_delivered_order'));
+        }
+        $order->update([
+              'status' => $order->status
+        ]);
 
+        // TODO:: send email or notification to admin
+        return successResponse(Lang::get('success'));
     }
 }

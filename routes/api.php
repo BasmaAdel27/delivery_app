@@ -18,4 +18,5 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
 Route::middleware(['auth:sanctum', 'appLocale'])->group(function () {
     Route::get('home', [HomeController::class, 'index']);
+    Route::post('update_order', [HomeController::class, 'updateOrder']);
 });
