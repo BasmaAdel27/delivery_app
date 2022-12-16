@@ -26,7 +26,7 @@
       @include('admin.layout.navbar.notifications') --}}
       <li class="nav-item nav-profile dropdown">
         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-          <span class="nav-profile-name">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</span>
+          <span class="nav-profile-name">{{auth()->user()->getFullNameAttribute()}}</span>
         </a>
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
           <a class="dropdown-item" href="#">
