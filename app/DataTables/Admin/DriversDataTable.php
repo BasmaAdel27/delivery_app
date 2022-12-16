@@ -18,6 +18,8 @@ class DriversDataTable extends DataTable
             ->eloquent($query)
              ->editColumn('first_name', function ($query) {
                 return $query->first_name .' '. $query->last_name;
+            })->editColumn('truck.plate_number', function ($query) {
+                return $query->truck?->plate_number;
             })->editColumn('Action', function ($query) {
                 return view('admin.drivers.datatable.action', compact('query'));
             })->rawColumns(['first_name','Action']);
@@ -51,6 +53,7 @@ class DriversDataTable extends DataTable
         return [
               Column::make('id')->title(trans('ID')),
               Column::make('first_name')->orderable(true)->title(trans('name')),
+              Column::make('truck.plate_number')->orderable(true)->title(trans('plate_number')),
               Column::make('identity_number')->orderable(true)->title(trans('identity_number')),
               Column::make('license_number')->orderable(true)->title(trans('license_number')),
               Column::make('License_expiry')->orderable(true)->title(trans('License_expiry')),

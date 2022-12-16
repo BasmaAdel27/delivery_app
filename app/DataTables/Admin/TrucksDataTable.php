@@ -16,14 +16,16 @@ class TrucksDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
-            ->editColumn('Action', function ($query) {
+            ->editColumn('driver.first_name', function ($query) {
+                return $query->driver?->first_name .' '. $query->driver?->last_name;
+            })->editColumn('Action', function ($query) {
                 return view('admin.trucks.datatable.action', compact('query'));
             })->rawColumns(['Action']);    }
 
 
     public function query()
     {
-        return Truck::select('trucks.*')->newQuery();
+        return Truck::select('trucks.*')->with('driver')->newQuery();
     }
 
 
@@ -50,6 +52,7 @@ class TrucksDataTable extends DataTable
         return [
               Column::make('id')->title(trans('ID')),
               Column::make('plate_number')->orderable(true)->title(trans('plate_number')),
+              Column::make('driver.first_name')->orderable(true)->title(trans('driver.first_name')),
               Column::make('truck_type')->orderable(true)->title(trans('truck_type')),
               Column::make('truck_model')->orderable(true)->title(trans('truck_model')),
               Column::make('license_number')->orderable(true)->title(trans('license_number')),

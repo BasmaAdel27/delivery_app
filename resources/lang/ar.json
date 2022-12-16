@@ -66,5 +66,6 @@
   "status_ar": "الحاله",
   "date_from": "من تاريخ :",
   "date_to": "إلى تاريخ :",
-  "search": "بحث"
+  "search": "بحث",
+  "driver.first_name": "اسم السائق"
 }
