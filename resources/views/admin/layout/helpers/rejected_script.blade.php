@@ -1,5 +1,5 @@
 <script>
-  function cancelElement(elem) {
+  function rejectedElement(elem) {
     event.preventDefault();
     let form = $(elem).next('form');
     Swal.fire({

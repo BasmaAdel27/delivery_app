@@ -10,29 +10,28 @@
 </head>
 
 <body>
-  <div class="container-scroller">
-    @include('admin.layout.navbar')
-    <div class="container-fluid page-body-wrapper">
-      @include('admin.layout.sidebar')
-      <div class="main-panel">
-        <div class="content-wrapper">
-          @yield('content')
-          <div class="row">
-            <footer class="footer" style="margin: 0 auto">
-              <span class="text-muted d-block text-center"> #</span>
-            </footer>
-          </div>
+<div class="container-scroller">
+  @include('admin.layout.navbar')
+  <div class="container-fluid page-body-wrapper">
+    @include('admin.layout.sidebar')
+    <div class="main-panel">
+      <div class="content-wrapper">
+        @yield('content')
+        <div class="row">
+          <footer class="footer" style="margin: 0 auto">
+            <span class="text-muted d-block text-center"> #</span>
+          </footer>
         </div>
       </div>
     </div>
   </div>
-  @include('admin.layout.scripts')
-  @include('admin.layout.flash.errors')
-  @include('admin.layout.flash.success')
-  @include('admin.layout.helpers.delete_script')
-  @include('admin.layout.helpers.active_script')
-  @include('admin.layout.helpers.cancel_script')
-  @include('admin.layout.helpers.inactive_script')
+</div>
+@include('admin.layout.scripts')
+@include('admin.layout.flash.errors')
+@include('admin.layout.flash.success')
+@include('admin.layout.helpers.delete_script')
+@include('admin.layout.helpers.delivered_script')
+@include('admin.layout.helpers.rejected_script')
 </body>
 
 </html>

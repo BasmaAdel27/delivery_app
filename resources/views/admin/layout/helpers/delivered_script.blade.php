@@ -1,5 +1,5 @@
 <script>
-  function deactiveElement(elem) {
+  function deliveredElement(elem) {
     event.preventDefault();
     let form = $(elem).next('form');
     Swal.fire({
@@ -14,7 +14,7 @@
     }).then((result) => {
       if (result.isConfirmed) {
         form.submit();
-        Swal.fire("@lang('confirmed!')", "@lang('success')");
+        Swal.fire("@lang('delivered!')", "@lang('success')");
       }
     });
   }

@@ -33,8 +33,8 @@
           </div>
 
           <div class="form-group col-6">
-            <label>@lang("identification_Number")</label>
-            <input type="text" class="form-control" name='identification_Number'>
+            <label>@lang("identity_number")</label>
+            <input type="text" class="form-control" name='identity_number'>
           </div>
 
 

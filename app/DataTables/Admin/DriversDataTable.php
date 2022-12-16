@@ -16,13 +16,11 @@ class DriversDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
-            ->editColumn('truck_id', function ($query) {
-                return $query->truck?->plate_number;
-            })  ->editColumn('first_name', function ($query) {
+             ->editColumn('first_name', function ($query) {
                 return $query->first_name .' '. $query->last_name;
             })->editColumn('Action', function ($query) {
                 return view('admin.drivers.datatable.action', compact('query'));
-            })->rawColumns(['truck','first_name','Action']);
+            })->rawColumns(['first_name','Action']);
 
     }
 
@@ -53,10 +51,9 @@ class DriversDataTable extends DataTable
         return [
               Column::make('id')->title(trans('ID')),
               Column::make('first_name')->orderable(true)->title(trans('name')),
-              Column::make('identification_Number')->orderable(true)->title(trans('identification_Number')),
+              Column::make('identity_number')->orderable(true)->title(trans('identity_number')),
               Column::make('license_number')->orderable(true)->title(trans('license_number')),
               Column::make('License_expiry')->orderable(true)->title(trans('License_expiry')),
-              Column::make('truck_id')->orderable(true)->title(trans('truck_number')),
               Column::make('phone')->orderable(true)->title(trans('phone')),
               Column::make('address')->orderable(true)->title(trans('address')),
               Column::make('created_at')->title(trans('created_at')),

@@ -28,11 +28,11 @@ class DriverRequest extends FormRequest
         ];
         if (!$this->isMethod('PUT')) {
             $rules['password'] = 'required|min:8|confirmed';
-            $rules['identification_Number'] = 'required|min:14|numeric|unique:users';
+            $rules['identity_number'] = 'required|min:14|numeric|unique:users';
             $rules['license_number'] = 'required|numeric|unique:users';
             $rules['email'] = 'nullable|unique:users,email';
         }else{
-            $rules['identification_Number'] = 'required|numeric|min:14|unique:users,identification_Number,'. $this->driver?->id;
+            $rules['identity_number'] = 'required|numeric|min:14|unique:users,identity_number,'. $this->driver?->id;
             $rules['license_number'] = 'required|numeric|unique:users,license_number,'. $this->driver?->id;
             $rules['email'] = 'nullable|unique:users,email,'. $this->driver?->id;
         }

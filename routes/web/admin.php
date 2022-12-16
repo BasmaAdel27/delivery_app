@@ -16,5 +16,7 @@ Route::middleware([\App\Http\Middleware\SuperAdmin::class])->group(function () {
     Route::resource('trucks', TruckController::class);
     Route::resource('customers', CustomerController::class);
     Route::resource('orders', OrderController::class);
+    Route::put('orders/delivered/{id}', [OrderController::class, 'delivered'])->name('orders.delivered');
+    Route::put('orders/rejected/{id}', [OrderController::class, 'rejected'])->name('orders.rejected');
 });
 

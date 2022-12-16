@@ -20,14 +20,16 @@ class DriverController extends Controller
 
     public function create()
     {
-        $trucks=Truck::doesntHave('driver')->pluck('plate_number', 'id');;
+        $trucks=Truck::where('user_id',null)->pluck('plate_number', 'id');;
         return view('admin.drivers.create',compact('trucks'));
     }
 
     public function store(DriverRequest $request,User $driver)
     {
         $data=$request->validated();
-        $driver->fill($data);
+        $driver->fill(array_except($data, 'truck_id'))->save();
+        $truck=Truck::find($data['truck_id']);
+       $truck->user_id=$driver->id;
         $driver->user_type='driver';
         $driver->save();
         return redirect()->route('admin.drivers.index')->with('success', trans('created_successfully'));
@@ -42,8 +44,8 @@ class DriverController extends Controller
 
     public function edit(User $driver)
     {
-        $trucks=Truck::doesntHave('driver')
-              ->orWhereHas('driver', fn ($q) => $q->where('truck_id', $driver->truck_id))->pluck('plate_number', 'id');
+        $trucks=Truck::where('user_id',null)
+              ->orWhere('user_id', $driver->id)->pluck('plate_number', 'id');
         return view('admin.drivers.edit',compact('driver','trucks'));
     }
 
@@ -51,7 +53,10 @@ class DriverController extends Controller
     public function update(DriverRequest $request, User $driver)
     {
         $data=$request->validated();
-        $driver->fill($data);
+        $driver->fill(array_except($data, 'truck_id'))->save();
+        $truck=Truck::find($data['truck_id']);
+        $truck->user_id=$driver->id;
+        $truck->save();
         $driver->user_type='driver';
         $driver->save();
         return redirect()->route('admin.drivers.index')->with('success', trans('updated_successfully'));

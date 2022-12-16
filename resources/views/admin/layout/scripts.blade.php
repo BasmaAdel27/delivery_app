@@ -4,7 +4,6 @@
 <script src={{ asset('adminPanel/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}></script>
 <script src={{ asset('adminPanel/js/off-canvas.js') }}></script>
 <script src={{ asset('adminPanel/js/hoverable-collapse.js') }}></script>
-<script src={{ asset('adminPanel/js/template.js') }}></script>
 {{--<script src={{ asset('adminPanel/js/dashboard.js') }}></script>--}}
 <script src={{ asset('adminPanel/js/data-table.js') }}></script>
 <script src={{ asset('adminPanel/js/jquery.dataTables.js') }}></script>
@@ -19,9 +18,4 @@
 @endif
 <script src="{{ asset('js/custom.js') }}"></script>
 <script src="{{ asset('js/printThis.js') }}"></script>
-<script src="{{ asset('js/recorder.js') }}"></script>
-<script>
-  var element = document.getElementById("chat");
-  element.scrollTop = element.scrollHeight;
-</script>
 @yield('scripts')
