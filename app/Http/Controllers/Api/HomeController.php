@@ -21,9 +21,13 @@ class HomeController extends Controller
         return successResponse(HomeResource::collection($orders), PaginationResource::make($orders));
     }
 
-    public function updateOrder(Request $request, $id)
+    public function updateOrder(Request $request)
     {
-        $order = Order::where(['driver_id' => auth()->id()])->find($id);
+        $this->validate($request, [
+              'order_id' => 'required',
+              'status' => 'required',
+        ]);
+        $order = Order::where(['driver_id' => auth()->id()])->find($request->order_id);
         if (!$order) {
             return failedResponse(Lang::get('order_not_exists'));
         }
