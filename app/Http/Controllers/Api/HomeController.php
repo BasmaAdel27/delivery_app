@@ -23,9 +23,8 @@ class HomeController extends Controller
 
     public function updateOrder(Request $request, $id)
     {
-        $order = Order::where(['driver_id' => auth()->id()])->findOrFail($id);
-        if(!$order)
-        {
+        $order = Order::where(['driver_id' => auth()->id()])->find($id);
+        if (!$order) {
             return failedResponse(Lang::get('order_not_exists'));
         }
         if ($order->status == Order::DELIVERED) {
