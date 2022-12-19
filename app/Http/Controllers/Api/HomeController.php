@@ -24,6 +24,10 @@ class HomeController extends Controller
     public function updateOrder(Request $request, $id)
     {
         $order = Order::where(['driver_id' => auth()->id()])->findOrFail($id);
+        if(!$order)
+        {
+            return failedResponse(Lang::get('order_not_exists'));
+        }
         if ($order->status == Order::DELIVERED) {
             return failedResponse(Lang::get('can_not_updated_delivered_order'));
         }
@@ -32,6 +36,6 @@ class HomeController extends Controller
         ]);
 
         // TODO:: send email or notification to admin
-        return successResponse(Lang::get('success'));
+        return successResponse(Lang::get('updated_successfully'));
     }
 }

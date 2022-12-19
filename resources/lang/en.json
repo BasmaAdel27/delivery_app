@@ -64,5 +64,7 @@
   "status_ar":"Status",
   "date_from": "From Date :",
   "date_to": "To Date :",
-  "search": "Search"
+  "search": "Search",
+  "can_not_updated_delivered_order" : "Can not Update delivered Order",
+  "order_not_exists" : "Order is not exists"
 }

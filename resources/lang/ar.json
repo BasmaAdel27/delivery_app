@@ -67,5 +67,7 @@
   "date_from": "من تاريخ :",
   "date_to": "إلى تاريخ :",
   "search": "بحث",
-  "driver.first_name": "اسم السائق"
+  "driver.first_name": "اسم السائق",
+  "can_not_updated_delivered_order" : "لا يمكن تعديل طلب تم توصيله",
+  "order_not_exists" : "الطلب غير موجود"
 }
