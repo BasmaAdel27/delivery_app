@@ -77,5 +77,7 @@
   "operating_card": "Operating Card",
   "operating_cardDate": "Operating Card Date",
   "application_date": "Application Date",
-  "Examination_date": "Examination Date"
+  "Examination_date": "Examination Date",
+  "can_not_updated_delivered_order" : "Can not Update delivered Order",
+  "order_not_exists" : "Order is not exists"
 }

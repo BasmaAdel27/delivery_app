@@ -80,7 +80,9 @@
   "operating_card": "كارت التشغيل",
   "operating_cardDate": "تاريخ كارت التشغيل",
   "application_date": "تاريخ الاستمارة",
-  "Examination_date": "تاريخ الفحص الدوري"
+  "Examination_date": "تاريخ الفحص الدوري",
 
+  "can_not_updated_delivered_order" : "لا يمكن تعديل طلب تم توصيله",
+  "order_not_exists" : "الطلب غير موجود"
 }
 

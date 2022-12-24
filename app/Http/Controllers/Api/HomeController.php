@@ -21,9 +21,16 @@ class HomeController extends Controller
         return successResponse(HomeResource::collection($orders), PaginationResource::make($orders));
     }
 
-    public function updateOrder(Request $request, $id)
+    public function updateOrder(Request $request)
     {
-        $order = Order::where(['driver_id' => auth()->id()])->findOrFail($id);
+        $this->validate($request, [
+              'order_id' => 'required',
+              'status' => 'required',
+        ]);
+        $order = Order::where(['driver_id' => auth()->id()])->find($request->order_id);
+        if (!$order) {
+            return failedResponse(Lang::get('order_not_exists'));
+        }
         if ($order->status == Order::DELIVERED) {
             return failedResponse(Lang::get('can_not_updated_delivered_order'));
         }
@@ -32,6 +39,6 @@ class HomeController extends Controller
         ]);
 
         // TODO:: send email or notification to admin
-        return successResponse(Lang::get('success'));
+        return successResponse(Lang::get('updated_successfully'));
     }
 }
