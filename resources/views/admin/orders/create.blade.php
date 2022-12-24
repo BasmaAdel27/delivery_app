@@ -1,5 +1,7 @@
 @extends('admin.app')
-@section('title')@lang('orders')@endsection
+@section('title')
+  @lang('orders')
+@endsection
 @section('content')
   <div class="container">
 
@@ -10,7 +12,8 @@
            class="btn btn-outline-dark btn-lg font-weight-bold">@lang('back')</a>
       </div>
       <div class="card-body table-responsive">
-        <form action="{{ route('admin.orders.store') }}" method="post" enctype="multipart/form-data" wire:submit.prevent="savePersonalData" onkeydown="return event.key != 'Enter';">@csrf
+        <form action="{{ route('admin.orders.store') }}" method="post" enctype="multipart/form-data"
+              wire:submit.prevent="savePersonalData" onkeydown="return event.key != 'Enter';">@csrf
           <div class="row">
             <div class="form-group col-6">
               <label>@lang("price")</label>
@@ -18,7 +21,7 @@
             </div>
             <div class="form-group col-6">
               <label>@lang("quantity")</label>
-              <input type="text" class="form-control" name='quantity'>
+              <input type="number" class="form-control" name='quantity'>
             </div>
             <div class="form-group col-6">
               <label>@lang("weight")</label>
@@ -26,7 +29,7 @@
             </div>
             <div class="form-group col-6">
               <label>@lang('moves_number')</label>
-              <input type="text" name="moves_number" class="form-control">
+              <input type="number" name="moves_number" class="form-control">
             </div>
 
             <div class="form-group col-6">
@@ -48,17 +51,23 @@
               </select>
             </div>
 
+            <div class="form-group col-12">
+              <label>@lang("address")</label>
+              <input type="text" class="form-control" name='location' id="location">
+            </div>
+
             <div class="col-12">
-              <label>@lang('address')</label>
               <fieldset class="content-group">
                 <legend class="text-bold"></legend>
-                <input id="searchInput" class="input-controls" type="text" placeholder="ادخل العنوان" style="width: 28%;height: 35px;" >
+                <input id="searchInput" class="input-controls" type="text" placeholder="ادخل العنوان"
+                       style="width: 28%;height: 35px;">
 
-                  <div class="map" lat="30.047880451278246" lng="31.23546501295588" id="map" style="width: 100%; height: 300px;"></div>
+                <div class="map" lat="30.047880451278246" lng="31.23546501295588" id="map"
+                     style="width: 100%; height: 300px;"></div>
                 <div class="form_area">
-                  <input type="text" name="location" id="location">
-                  <input type="text" name="lat" id="lat" value="">
-                  <input type="text"  name="lng" id="lng" value="">
+                  <input type="text" name="location" id="location" hidden>
+                  <input type="text" name="lat" id="lat" value="" hidden>
+                  <input type="text" name="lng" id="lng" value="" hidden>
                 </div>
 
               </fieldset>
@@ -76,15 +85,16 @@
 
 @endsection
 @section('scripts')
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaFbSOerPJ0NF5IArDBvQ_dX3ODWnln5c&language=ar&libraries=places&callback=initialize"
-          async defer></script>
+  <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaFbSOerPJ0NF5IArDBvQ_dX3ODWnln5c&language=ar&libraries=places&callback=initialize"
+        async defer></script>
   <script>
     /* script */
     function initialize() {
-      var m=document.getElementById('map');
-      var lng= m.getAttribute('lng');
-      var lat= m.getAttribute('lat');
-      var latlng = new google.maps.LatLng(lat,lng);
+      var m = document.getElementById('map');
+      var lng = m.getAttribute('lng');
+      var lat = m.getAttribute('lat');
+      var latlng = new google.maps.LatLng(lat, lng);
       var map = new google.maps.Map(document.getElementById('map'), {
         center: latlng,
         zoom: 13
@@ -101,7 +111,7 @@
       var autocomplete = new google.maps.places.Autocomplete(input);
       autocomplete.bindTo('bounds', map);
       var infowindow = new google.maps.InfoWindow();
-      autocomplete.addListener('place_changed', function() {
+      autocomplete.addListener('place_changed', function () {
         infowindow.close();
         marker.setVisible(false);
         var place = autocomplete.getPlace();
@@ -121,17 +131,17 @@
         marker.setPosition(place.geometry.location);
         marker.setVisible(true);
 
-        bindDataToForm(place.formatted_address,place.geometry.location.lat(),place.geometry.location.lng());
+        bindDataToForm(place.formatted_address, place.geometry.location.lat(), place.geometry.location.lng());
         infowindow.setContent(place.formatted_address);
         infowindow.open(map, marker);
 
       });
       // this function will work on marker move event into map
-      google.maps.event.addListener(marker, 'dragend', function() {
-        geocoder.geocode({'latLng': marker.getPosition()}, function(results, status) {
+      google.maps.event.addListener(marker, 'dragend', function () {
+        geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
           if (status == google.maps.GeocoderStatus.OK) {
             if (results[0]) {
-              bindDataToForm(results[0].formatted_address,marker.getPosition().lat(),marker.getPosition().lng());
+              bindDataToForm(results[0].formatted_address, marker.getPosition().lat(), marker.getPosition().lng());
               infowindow.setContent(results[0].formatted_address);
               infowindow.open(map, marker);
             }
@@ -139,12 +149,14 @@
         });
       });
     }
-    function bindDataToForm(address,lat,lng){
+
+    function bindDataToForm(address, lat, lng) {
       document.getElementById('location').value = address;
       document.getElementById('lat').value = lat;
       document.getElementById('lng').value = lng;
-      console.log(document.getElementById('lat').value )
+      console.log(document.getElementById('lat').value)
     }
+
     //    google.maps.event.addDomListener(window, 'load', initialize);
   </script>
 @endsection

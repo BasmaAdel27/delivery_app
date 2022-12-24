@@ -25,10 +25,6 @@ class CreateUsersTable extends Migration
             $table->float('salary')->nullable();
             $table->string('license_number')->unique()->nullable();
             $table->date('license_expiry')->nullable();
-            $table->boolean('has_card')->default(false);
-            $table->date('card_end_date')->nullable();
-            $table->boolean('truck_delegation')->default(false);
-            $table->date('delegation_end_date')->nullable();
             $table->string('password')->nullable();
             $table->string('firebase_token')->nullable();
             $table->rememberToken();

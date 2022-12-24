@@ -19,7 +19,7 @@
             </div>
             <div class="form-group col-6">
               <label>@lang("quantity")</label>
-              <input type="text" class="form-control" name='quantity' value="{{$order->quantity}}">
+              <input type="number" class="form-control" name='quantity' value="{{$order->quantity}}">
             </div>
             <div class="form-group col-6">
               <label>@lang("weight")</label>
@@ -27,7 +27,7 @@
             </div>
             <div class="form-group col-6">
               <label>@lang('moves_number')</label>
-              <input type="text" name="moves_number" class="form-control" value="{{$order->moves_number}}">
+              <input type="number" name="moves_number" class="form-control" value="{{$order->moves_number}}">
             </div>
 
             <div class="form-group col-6">
@@ -57,9 +57,9 @@
 
                 <div class="map" lat="{{$order->lat}}" lng="{{$order->lng}}" id="map" style="width: 100%; height: 300px;"></div>
                 <div class="form_area">
-                  <input type="text" name="location" id="location" value="{{$order->location}}">
-                  <input type="text" name="lat" id="lat" value="{{$order->lat}}">
-                  <input type="text"  name="lng" id="lng" value="{{$order->lng}}">
+                  <input type="text" name="location" id="location" value="{{$order->location}}" hidden>
+                  <input type="text" name="lat" id="lat" value="{{$order->lat}}" hidden>
+                  <input type="text"  name="lng" id="lng" value="{{$order->lng}}" hidden>
                 </div>
 
               </fieldset>
