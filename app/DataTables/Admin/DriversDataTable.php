@@ -56,7 +56,7 @@ class DriversDataTable extends DataTable
               Column::make('truck.plate_number')->orderable(true)->title(trans('plate_number')),
               Column::make('identity_number')->orderable(true)->title(trans('identity_number')),
               Column::make('license_number')->orderable(true)->title(trans('license_number')),
-              Column::make('License_expiry')->orderable(true)->title(trans('License_expiry')),
+              Column::make('license_expiry')->orderable(true)->title(trans('license_expiry')),
               Column::make('phone')->orderable(true)->title(trans('phone')),
               Column::make('address')->orderable(true)->title(trans('address')),
               Column::make('created_at')->title(trans('created_at')),

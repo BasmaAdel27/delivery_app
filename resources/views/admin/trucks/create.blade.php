@@ -17,7 +17,7 @@
           <div class="row">
             <div class="form-group col-6">
               <label>@lang("plate_number")</label>
-              <input type="text" class="form-control" name='plate_number' value="{{ old('plate_number')}}">
+              <input type="number" class="form-control" name='plate_number' value="{{ old('plate_number')}}">
             </div>
             <div class="form-group col-6">
               <label>@lang("truck_type")</label>
@@ -33,11 +33,11 @@
             </div>
             <div class="form-group col-6">
               <label>@lang("license_number")</label>
-              <input type="text" class="form-control" name='license_number' value="{{ old('license_number')}}">
+              <input type="number" class="form-control" name='license_number' value="{{ old('license_number')}}">
             </div>
             <div class="form-group col-6">
-              <label>@lang('License_expiry')</label>
-              <input type="date" name="License_expiry" class="form-control" value="{{ old('License_expiry')}}">
+              <label>@lang('license_expiry')</label>
+              <input type="date" name="license_expiry" class="form-control" value="{{ old('license_expiry')}}">
             </div>
             <div class="form-group col-6">
               <label>@lang('operating_card')</label>

@@ -23,7 +23,7 @@ class CreateTrucksTable extends Migration
             $table->string('truck_type');
             $table->string('truck_model');
             $table->integer('license_number')->unique();
-            $table->date('License_expiry');
+            $table->date('license_expiry');
             $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamps();
         });

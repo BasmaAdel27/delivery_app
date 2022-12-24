@@ -28,8 +28,8 @@
             <input type="text" class="form-control" name='license_number' value="{{ old('license_number')}}">
           </div>
           <div class="form-group col-6">
-            <label>@lang('License_expiry')</label>
-            <input type="date" name="License_expiry" class="form-control" value="{{ old('License_expiry')}}">
+            <label>@lang('license_expiry')</label>
+            <input type="date" name="license_expiry" class="form-control" value="{{ old('license_expiry')}}">
           </div>
 
           <div class="form-group col-6">

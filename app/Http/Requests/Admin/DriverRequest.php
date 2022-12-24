@@ -20,7 +20,7 @@ class DriverRequest extends FormRequest
         $rules= [
               'first_name' => 'required|min:2|max:255',
               'last_name' => 'required|min:2|max:255',
-              'License_expiry'=>'required|after_or_equal:'.$dt,
+              'license_expiry'=>'required|after_or_equal:'.$dt,
               'phone'=>'required|numeric',
               'address'=>'required',
               'truck_id'=>'nullable',
