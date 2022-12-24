@@ -38,9 +38,9 @@ class DriverController extends Controller
     }
 
 
-    public function show($id)
+    public function show(User $driver)
     {
-        //
+        return view('admin.drivers.show',compact('driver'));
     }
 
 

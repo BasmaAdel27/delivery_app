@@ -79,5 +79,7 @@
   "application_date": "Application Date",
   "Examination_date": "Examination Date",
   "can_not_updated_delivered_order" : "Can not Update delivered Order",
-  "order_not_exists" : "Order is not exists"
+  "order_not_exists" : "Order is not exists",
+  "truck_details": "Truck Details"
+
 }

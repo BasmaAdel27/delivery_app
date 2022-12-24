@@ -31,9 +31,9 @@ class TruckController extends Controller
     }
 
 
-    public function show($id)
+    public function show(Truck $truck)
     {
-        //
+        return view('admin.trucks.show',compact('truck'));
     }
 
 

@@ -70,7 +70,7 @@
   "driver.first_name": "اسم السائق",
   "orders_pending": "طلبات قيد التنفيذ",
   "orders_delivered": "طلبات مغلقه",
-  "card": "بطاقه الساثق",
+  "card": "بطاقه السائق",
   "card_expiry": "تاريخ انتهاء بطاقه السائق",
   "delegation": "تفويض على السياره",
   "delegation_date": "تاريخ التفويض",
@@ -83,6 +83,7 @@
   "Examination_date": "تاريخ الفحص الدوري",
 
   "can_not_updated_delivered_order" : "لا يمكن تعديل طلب تم توصيله",
-  "order_not_exists" : "الطلب غير موجود"
+  "order_not_exists" : "الطلب غير موجود",
+  "truck_details": "تفاصيل الشاحنه"
 }
 
