@@ -14,10 +14,7 @@ use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
-//    public function __construct(){
-//        $this->date_from = Carbon::parse(request('date_from'))->format('Y-m-d');
-//        $this->date_to   = Carbon::parse(request('date_to'))->format('Y-m-d');
-//    }
+
 
     public function index(OrdersDataTable $ordersDataTable)
     {

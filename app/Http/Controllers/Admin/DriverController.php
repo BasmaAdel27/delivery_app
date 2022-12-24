@@ -28,8 +28,10 @@ class DriverController extends Controller
     {
         $data=$request->validated();
         $driver->fill(array_except($data, 'truck_id'))->save();
-        $truck=Truck::find($data['truck_id']);
-       $truck->user_id=$driver->id;
+        if ($data['truck_id']) {
+            $truck = Truck::find($data['truck_id']);
+            $truck->user_id = $driver->id;
+        }
         $driver->user_type='driver';
         $driver->save();
         return redirect()->route('admin.drivers.index')->with('success', trans('created_successfully'));
@@ -52,11 +54,14 @@ class DriverController extends Controller
 
     public function update(DriverRequest $request, User $driver)
     {
-        $data=$request->validated();
+        $data = $request->validated();
         $driver->fill(array_except($data, 'truck_id'))->save();
-        $truck=Truck::find($data['truck_id']);
-        $truck->user_id=$driver->id;
+        if ($data['truck_id']) {
+
+        $truck = Truck::find($data['truck_id']);
+        $truck->user_id = $driver->id;
         $truck->save();
+        }
         $driver->user_type='driver';
         $driver->save();
         return redirect()->route('admin.drivers.index')->with('success', trans('updated_successfully'));

@@ -64,5 +64,18 @@
   "status_ar":"Status",
   "date_from": "From Date :",
   "date_to": "To Date :",
-  "search": "Search"
+  "search": "Search",
+  "orders_pending": "Pending Orders",
+  "orders_delivered": "Delivered Orders",
+  "card": "Driver Card",
+  "card_expiry": "Card Expiry",
+  "delegation": "Delegation",
+  "delegation_date": "Delegation Date",
+  "salary": "Salary",
+  "yes": "Yes",
+  "no": "No",
+  "operating_card": "Operating Card",
+  "operating_cardDate": "Operating Card Date",
+  "application_date": "Application Date",
+  "Examination_date": "Examination Date"
 }

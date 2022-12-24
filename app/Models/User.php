@@ -60,6 +60,10 @@ class User extends Authenticatable
         return $this->first_name . ' ' . $this->last_name;
     }
 
+    public function setPasswordAttribute($value)
+    {
+        return $this->attributes['password'] = Hash::needsRehash($value) ? Hash::make($value) : $value;
+    }
     public function truck()
     {
         return $this->hasOne(Truck::class);

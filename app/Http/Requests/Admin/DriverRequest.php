@@ -22,8 +22,13 @@ class DriverRequest extends FormRequest
               'last_name' => 'required|min:2|max:255',
               'License_expiry'=>'required|after_or_equal:'.$dt,
               'phone'=>'required|numeric',
-                'address'=>'required',
-                'truck_id'=>'nullable',
+              'address'=>'required',
+              'truck_id'=>'nullable',
+              'delegation_date'=>'nullable|after_or_equal:'.$dt,
+              'card_expiry'=>'nullable|after_or_equal:'.$dt,
+              'card'=>'nullable',
+              'delegation'=>'nullable',
+              'salary'=>'required'
 
         ];
         if (!$this->isMethod('PUT')) {

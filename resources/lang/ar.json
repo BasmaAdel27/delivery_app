@@ -67,5 +67,20 @@
   "date_from": "من تاريخ :",
   "date_to": "إلى تاريخ :",
   "search": "بحث",
-  "driver.first_name": "اسم السائق"
+  "driver.first_name": "اسم السائق",
+  "orders_pending": "طلبات قيد التنفيذ",
+  "orders_delivered": "طلبات مغلقه",
+  "card": "بطاقه الساثق",
+  "card_expiry": "تاريخ انتهاء بطاقه السائق",
+  "delegation": "تفويض على السياره",
+  "delegation_date": "تاريخ التفويض",
+  "salary": "الراتب",
+  "yes": "نعم",
+  "no": "لا",
+  "operating_card": "كارت التشغيل",
+  "operating_cardDate": "تاريخ كارت التشغيل",
+  "application_date": "تاريخ الاستمارة",
+  "Examination_date": "تاريخ الفحص الدوري"
+
 }
+

@@ -16,6 +16,10 @@ class CreateTrucksTable extends Migration
         Schema::create('trucks', function (Blueprint $table) {
             $table->id();
             $table->string('plate_number')->unique();
+            $table->string('operating_card')->unique();
+            $table->date('operating_cardDate');
+            $table->date('application_date');
+            $table->date('Examination_date');
             $table->string('truck_type');
             $table->string('truck_model');
             $table->integer('license_number')->unique();

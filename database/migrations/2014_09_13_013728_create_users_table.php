@@ -16,8 +16,13 @@ class CreateUsersTable extends Migration
             $table->enum('user_type',User::types)->default('driver');
             $table->string('email')->unique()->nullable();
             $table->string('identity_number')->unique()->nullable();
+            $table->boolean('card')->default(false);
+            $table->date('card_expiry')->nullable();
+            $table->boolean('delegation')->default(false);
+            $table->date('delegation_date')->nullable();
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
+            $table->float('salary')->nullable();
             $table->string('license_number')->unique()->nullable();
             $table->date('License_expiry')->nullable();
             $table->string('password')->nullable();
