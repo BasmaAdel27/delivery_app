@@ -21,7 +21,7 @@ class TruckRequest extends FormRequest
         $rules= [
               'truck_type' => 'required',
               'truck_model' => 'required',
-              'License_expiry'=>'required|after_or_equal:'.$dt,
+              'license_expiry'=>'required|after_or_equal:'.$dt,
                 'operating_card'=>'required',
               'operating_cardDate'=>'required',
               'application_date'=>'required',

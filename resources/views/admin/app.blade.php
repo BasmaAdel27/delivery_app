@@ -32,6 +32,13 @@
 @include('admin.layout.helpers.delete_script')
 @include('admin.layout.helpers.delivered_script')
 @include('admin.layout.helpers.rejected_script')
+
+<script>
+  $(document).ready(function(){
+    // Initialize select2
+    $("#truck").select2();
+  });
+</script>
 </body>
 
 </html>

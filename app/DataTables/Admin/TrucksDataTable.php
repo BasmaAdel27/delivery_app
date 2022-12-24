@@ -56,7 +56,7 @@ class TrucksDataTable extends DataTable
               Column::make('truck_type')->orderable(true)->title(trans('truck_type')),
               Column::make('truck_model')->orderable(true)->title(trans('truck_model')),
               Column::make('license_number')->orderable(true)->title(trans('license_number')),
-              Column::make('License_expiry')->orderable(true)->title(trans('License_expiry')),
+              Column::make('license_expiry')->orderable(true)->title(trans('license_expiry')),
               Column::make('created_at')->title(trans('created_at')),
               Column::make('updated_at')->title(trans('updated_at')),
               Column::make('Action')->title(trans('action'))->searchable(false)->orderable(false)
