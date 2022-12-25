@@ -21,8 +21,13 @@ class CreateOrdersTable extends Migration
             $table->string('weight');
             $table->integer('quantity');
             $table->integer('moves_number');
-            $table->string('lat');
-            $table->string('lng');
+            $table->string('lat_start');
+            $table->string('lng_start');
+            $table->string('address_start');
+            $table->string('lat_end');
+            $table->string('lng_end');
+            $table->string('address_end');
+            $table->float('order_pocket')->nullable();
             $table->string('status')->default('pending');
             $table->string('status_ar')->default('قيد الانتظار');
             $table->foreignId('driver_id')->nullable()->constrained('users')->nullOnDelete();

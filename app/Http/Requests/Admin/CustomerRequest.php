@@ -29,8 +29,10 @@ class CustomerRequest extends FormRequest
         ];
         if (!$this->isMethod('PUT')) {
             $rules['commercial_register']='required|unique:customers';
+            $rules['tax_number']='required|unique:customers';
         }else{
             $rules['commercial_register']='required|unique:customers,commercial_register,'.$this->customer?->id;
+            $rules['tax_number']='required|unique:customers,tax_number,'.$this->customer?->id;
         }
         return $rules;
     }

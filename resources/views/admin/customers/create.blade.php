@@ -14,42 +14,46 @@
           <div class="row">
             <div class="form-group col-6">
               <label>@lang("first_name")</label>
-              <input type="text" class="form-control" name='first_name'>
+              <input type="text" class="form-control" name='first_name' value="{{old('first_name')}}">
             </div>
             <div class="form-group col-6">
               <label>@lang("last_name")</label>
-              <input type="text" class="form-control" name='last_name'>
+              <input type="text" class="form-control" name='last_name' value="{{old('last_name')}}">
             </div>
             <div class="form-group col-6">
               <label>@lang("company_name")</label>
-              <input type="text" class="form-control" name='company_name'>
+              <input type="text" class="form-control" name='company_name' value="{{old('company_name')}}">
             </div>
             <div class="form-group col-6">
               <label>@lang("commercial_register")</label>
-              <input type="text" class="form-control" name='commercial_register'>
+              <input type="text" class="form-control" name='commercial_register' value="{{old('commercial_register')}}">
+            </div>
+            <div class="form-group col-6">
+              <label>@lang("tax_number")</label>
+              <input type="text" class="form-control" name='tax_number' value="{{old('tax_number')}}">
             </div>
             <div class="form-group col-6">
               <label>@lang('phone')</label>
-              <input type="text" name="phone" class="form-control">
+              <input type="text" name="phone" class="form-control" value="{{old('phone')}}">
             </div>
 
             <div class="form-group col-6">
               <label>@lang("contact_number")</label>
-              <input type="text" class="form-control" name='contact_number'>
+              <input type="text" class="form-control" name='contact_number' value="{{old('contact_number')}}">
             </div>
 
 
             <div class="form-group col-6">
               <label>@lang("address")</label>
-              <input type="text" class="form-control" name='address'>
+              <input type="text" class="form-control" name='address' value="{{old('address')}}">
             </div>
             <div class="form-group col-6">
               <label>@lang("district_name")</label>
-              <input type="text" class="form-control" name='district_name'>
+              <input type="text" class="form-control" name='district_name' value="{{old('district_name')}}">
             </div>
             <div class="form-group col-6">
               <label>@lang("build_number")</label>
-              <input type="text" class="form-control" name='build_number'>
+              <input type="text" class="form-control" name='build_number' value="{{old('build_number')}}">
             </div>
           </div>
           <div class="row">

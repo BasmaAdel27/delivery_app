@@ -17,14 +17,19 @@ class OrderRequest extends FormRequest
     {
         return [
             'price'=>'required',
-            'quantity'=>'required|numeric',
+            'quantity'=>'required',
             'weight'=>'required',
-            'moves_number'=>'required',
+            'moves_number'=>'required|numeric',
             'customer_id'=>'required',
             'driver_id'=>'required',
-              'location'=>'required',
-            'lat'=>'required',
-            'lng'=>'required',
+            'lat_start'=>'required',
+            'lng_start'=>'required',
+            'address_start'=>'required',
+            'lat_end'=>'required',
+            'lng_end'=>'required',
+            'address_end'=>'required',
+            'order_pocket'=>'nullable'
+
         ];
     }
 }

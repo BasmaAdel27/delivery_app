@@ -86,7 +86,7 @@
             <select name="truck_id" id="truck" class="form-control">
               <option value="">@lang('select')</option>
               @foreach ($trucks as $id => $name)
-                <option value="{{$id}}"   {{ old('truck_id') == 0 ? 'selected' : '' }}>{{$name}}</option>
+                <option value="{{$id}}"   {{ old('truck_id') == $id ? 'selected' : '' }}>{{$name}}</option>
               @endforeach
             </select>
           </div>

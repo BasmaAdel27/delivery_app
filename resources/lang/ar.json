@@ -84,6 +84,14 @@
 
   "can_not_updated_delivered_order" : "لا يمكن تعديل طلب تم توصيله",
   "order_not_exists" : "الطلب غير موجود",
-  "truck_details": "تفاصيل الشاحنه"
+  "truck_details": "تفاصيل الشاحنه",
+  "admins": "المدراء",
+  "user_type": "الوظيفه",
+  "admin": "ادمن",
+  "employee": "موظف",
+  "tax_number": "الرقم الضريبي",
+  "order_start": "بدايه الرحله من :",
+  "order_end": "نهايه الرحله الى :",
+  "order_pocket": "مصروف الرحلة"
 }
 

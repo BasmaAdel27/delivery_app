@@ -7,11 +7,13 @@ use App\Http\Controllers\Admin\DriverController;
 use App\Http\Controllers\Admin\TruckController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\AdminController;
 
 
 Route::middleware([\App\Http\Middleware\SuperAdmin::class])->group(function () {
     Route::get('dashboard', [HomeController::class, 'home'])->name('dashboard');
 
+    Route::resource('admins', AdminController::class);
     Route::resource('drivers', DriverController::class);
     Route::resource('trucks', TruckController::class);
     Route::resource('customers', CustomerController::class);

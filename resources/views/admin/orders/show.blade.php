@@ -32,28 +32,51 @@
               <label><strong>@lang("moves_number") :</strong></label>
              {{$order->moves_number}}
             </div>
+        <div class="form-group col-6">
+              <label><strong>@lang("order_pocket") :</strong></label>
+             {{$order->order_pocket}}
+            </div>
 
-              <div class="form-group col-6">
-                <label><strong>@lang("address") :</strong></label>
-                {{$order->location}}
-              </div>
               <div class="form-group col-6">
                 <label><strong>@lang("status") :</strong></label>
-                {{$order->status}}
+               @lang($order->status)
               </div>
 
+        <p class="card-description col-12">
+          @lang('order_start')
+        </p>
+        <div class="form-group col-6">
+          <label><strong>@lang("address") :</strong></label>
+          {{$order->address_start}}
+        </div>
         <div class="form-group col-12">
-          <label class="col-lg-3"><strong>العنوان على الخريطة :</strong></label>
           <div class="col-lg-9">
             <div id="map" style="width: 100%; height: 400px;"></div>
             <input type="hidden" name="lat" id="lat"
-                   value="{{ $order->lat}}">
+                   value="{{ $order->lat_start}}">
             <input type="hidden" name="lng" id="lng"
-                   value="{{ $order->lng}}">
+                   value="{{ $order->lng_start}}">
 
           </div>
         </div>
 
+        <p class="card-description col-12">
+          @lang('order_end')
+        </p>
+        <div class="form-group col-6">
+          <label><strong>@lang("address") :</strong></label>
+          {{$order->address_end}}
+        </div>
+        <div class="form-group col-12">
+          <div class="col-lg-9">
+            <div id="map2" style="width: 100%; height: 400px;"></div>
+            <input type="hidden" name="lat" id="lat2"
+                   value="{{ $order->lat_end}}">
+            <input type="hidden" name="lng" id="lng2"
+                   value="{{ $order->lng_end}}">
+
+          </div>
+        </div>
 
 
 
@@ -134,11 +157,17 @@
 
 @endsection
 @section('scripts')
+  <script>
+    window.onload=function (){
+      map1();
+      map2();
+    }
+  </script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByZjtFr8NH-E60v7emstu9TW9XcHS-BYI"
           type="text/javascript"></script>
   <script type="text/javascript">
-    window.onload = function () {
-      var latlng = new google.maps.LatLng({{ $order->lat}}, {{ $order->lng}})
+          function map1 () {
+      var latlng = new google.maps.LatLng({{ $order->lat_start}}, {{ $order->lng_start}})
       var map = new google.maps.Map(document.getElementById('map'), {
         center: latlng,
         zoom: 9,
@@ -154,5 +183,24 @@
         $("#lat").val(a.latLng.lat());
         $("#lng").val(a.latLng.lng());
       });
-    };</script>
+    };
+     function map2() {
+      var latlng = new google.maps.LatLng({{ $order->lat_end}}, {{ $order->lng_end}})
+      var map = new google.maps.Map(document.getElementById('map2'), {
+        center: latlng,
+        zoom: 9,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+      var marker = new google.maps.Marker({
+        position: latlng,
+        map: map,
+        title: 'Set lat/lon values for this property',
+        draggable: true
+      });
+      google.maps.event.addListener(marker, 'dragend', function (a) {
+        $("#lat2").val(a.latLng.lat());
+        $("#lng2").val(a.latLng.lng());
+      });
+    };
+  </script>
 @endsection

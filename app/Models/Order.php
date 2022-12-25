@@ -16,7 +16,8 @@ class Order extends Model
 
 
     const STATUSES = [self::PENDING, self::DELIVERED,self::CANCELED];
-    protected $fillable=['price','quantity','weight','moves_number','customer_id','driver_id','lat','lng','location'];
+    protected $fillable=['price','quantity','weight','moves_number','customer_id',
+          'driver_id','lat_start','lng_start','address_start','lat_end','lng_end','address_end','order_pocket'];
 
     public function driver()
     {

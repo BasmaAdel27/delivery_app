@@ -2,31 +2,30 @@
 
 namespace App\DataTables\Admin;
 
-use App\Models\Customer;
-use Yajra\DataTables\Html\Button;
+use App\Models\User;use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class CustomersDataTable extends DataTable
+class AdminsDataTable extends DataTable
 {
 
     public function dataTable($query)
     {
         return datatables()
-            ->eloquent($query)
-            ->editColumn('first_name', function ($query) {
+              ->eloquent($query)
+              ->editColumn('first_name', function ($query) {
                   return $query->first_name .' '. $query->last_name;
-            })->editColumn('Action', function ($query) {
-                  return view('admin.customers.datatable.action', compact('query'));
-            })->rawColumns(['first_name','Action']);
+              })->editColumn('Action', function ($query) {
+                  return view('admin.admins.datatable.action', compact('query'));
+              })->rawColumns(['first_name','Action']);
     }
 
 
     public function query()
     {
-        return Customer::select('customers.*')->newQuery();
+        return User::where('user_type','admin')->orwhere('user_type','employee')->select('users.*')->newQuery();
     }
 
 
@@ -52,14 +51,10 @@ class CustomersDataTable extends DataTable
         return [
               Column::make('id')->title(trans('ID')),
               Column::make('first_name')->orderable(true)->title(trans('name')),
-              Column::make('company_name')->orderable(true)->title(trans('company_name')),
-              Column::make('commercial_register')->orderable(true)->title(trans('commercial_register')),
-              Column::make('tax_number')->orderable(true)->title(trans('tax_number')),
-              Column::make('contact_number')->orderable(true)->title(trans('contact_number')),
+              Column::make('user_type')->orderable(true)->title(trans('user_type')),
+              Column::make('email')->orderable(true)->title(trans('email')),
               Column::make('phone')->orderable(true)->title(trans('phone')),
               Column::make('address')->orderable(true)->title(trans('address')),
-              Column::make('district_name')->orderable(true)->title(trans('district_name')),
-              Column::make('build_number')->orderable(true)->title(trans('build_number')),
               Column::make('created_at')->title(trans('created_at')),
               Column::make('updated_at')->title(trans('updated_at')),
               Column::make('Action')->title(trans('action'))->searchable(false)->orderable(false)
@@ -73,6 +68,6 @@ class CustomersDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'Admin/Customers_' . date('YmdHis');
+        return 'Admin/Admins_' . date('YmdHis');
     }
 }

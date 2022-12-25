@@ -80,6 +80,14 @@
   "Examination_date": "Examination Date",
   "can_not_updated_delivered_order" : "Can not Update delivered Order",
   "order_not_exists" : "Order is not exists",
-  "truck_details": "Truck Details"
+  "truck_details": "Truck Details",
+  "admins": "Admins",
+  "admin": "Admin",
+  "employee": "Employee",
+  "tax_number": "Tax Number",
+  "order_start": "Start Order From:",
+  "order_end": "End Order To:",
+  "order_pocket": "Order Pocket"
+}
 
 }

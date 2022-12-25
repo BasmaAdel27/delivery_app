@@ -26,8 +26,9 @@ class User extends Authenticatable
 
     const ADMIN = 'admin';
     const DRIVER = 'driver';
+    const EMPLOYEE = 'employee';
 
-    const types = [self::ADMIN, self::DRIVER];
+    const types = [self::ADMIN, self::DRIVER,self::EMPLOYEE];
 
     /**
      * The attributes that are mass assignable.

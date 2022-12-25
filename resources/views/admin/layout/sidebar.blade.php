@@ -7,7 +7,14 @@
         <span class="menu-title">@lang('dashboard')</span>
       </a>
     </li>
-
+   @if(auth()->user()->user_type=='admin')
+    <li class="nav-item">
+      <a class="nav-link" href="{{route('admin.admins.index')}}">
+        <i class="mdi mdi-account-multiple menu-icon"></i>
+        <span class="menu-title">@lang('admins')</span>
+      </a>
+    </li>
+    @endif
     <li class="nav-item">
       <a class="nav-link" href="{{route('admin.drivers.index')}}">
         <i class="mdi mdi-account-group menu-icon"></i>
