@@ -92,6 +92,10 @@
   "tax_number": "الرقم الضريبي",
   "order_start": "بدايه الرحله من :",
   "order_end": "نهايه الرحله الى :",
-  "order_pocket": "مصروف الرحلة"
+  "order_pocket": "مصروف الرحلة",
+  "bills": "سندات الصرف",
+  "amount": "القيمه",
+  "description": "الوصف",
+  "bill_details": "تفاصيل سند الصرف"
 }
 

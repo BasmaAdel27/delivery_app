@@ -22,6 +22,12 @@
       </a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" href="{{route('admin.bills.index')}}">
+        <i class="mdi mdi-cash-multiple menu-icon"></i>
+        <span class="menu-title">@lang('bills')</span>
+      </a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" href="{{route('admin.trucks.index')}}">
         <i class="mdi mdi-truck-delivery menu-icon"></i>
         <span class="menu-title">@lang('trucks')</span>

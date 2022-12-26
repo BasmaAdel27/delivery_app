@@ -87,7 +87,11 @@
   "tax_number": "Tax Number",
   "order_start": "Start Order From:",
   "order_end": "End Order To:",
-  "order_pocket": "Order Pocket"
+  "order_pocket": "Order Pocket",
+  "bills": "Bills",
+  "amount": "Amount",
+  "description": "Description",
+   "bill_details": "Bill Details"
 }
 
 }
