@@ -29,7 +29,7 @@
     </li>
     <li class="nav-item">
       <a class="nav-link" href="{{route('admin.trucks.index')}}">
-        <i class="mdi mdi-truck-delivery menu-icon"></i>
+        <i class="mdi mdi-truck menu-icon"></i>
         <span class="menu-title">@lang('trucks')</span>
       </a>
     </li>
@@ -42,7 +42,7 @@
 
     <li class="nav-item">
       <a class="nav-link" href="{{route('admin.orders.index')}}">
-        <i class="mdi mdi-contacts menu-icon"></i>
+        <i class="mdi mdi-truck-delivery menu-icon"></i>
         <span class="menu-title">@lang('orders')</span>
       </a>
     </li>
