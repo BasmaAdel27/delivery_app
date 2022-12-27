@@ -17,11 +17,11 @@ class BillsDataTable extends DataTable
 
         return datatables()
               ->eloquent($query)
-              ->editColumn('user_id', function ($query) {
+              ->editColumn('driver.first_name', function ($query) {
                   return $query->driver->getFullNameAttribute();
               })->editColumn('Action', function ($query) {
                   return view('admin.bills.datatable.action', compact('query'));
-              })->rawColumns(['user_id','Action']);
+              })->rawColumns(['driver.first_name','Action']);
     }
 
     public function query()
@@ -51,7 +51,7 @@ class BillsDataTable extends DataTable
     {
         return [
               Column::make('id')->title(trans('ID')),
-              Column::make('user_id')->orderable(true)->title(trans('name')),
+              Column::make('driver.first_name')->orderable(true)->title(trans('name')),
               Column::make('amount')->orderable(true)->title(trans('amount')),
               Column::make('created_at')->title(trans('created_at')),
               Column::make('Action')->title(trans('action'))->searchable(false)->orderable(false)

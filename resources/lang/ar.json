@@ -96,6 +96,13 @@
   "bills": "سندات الصرف",
   "amount": "القيمه",
   "description": "الوصف",
-  "bill_details": "تفاصيل سند الصرف"
+  "bill_details": "تفاصيل سند الصرف",
+  "financial_dues": "اجمالي المستحقات",
+  "details": "التفاصيل",
+  "orders_details": "تفاصيل الطلبات",
+  "bills_details": "تفاصيل سندات الصرف",
+  "bills_total": "إجمالي سندات الصرف",
+  "pockets_total": "إجمالي مصروفات الرحلات ",
+  "total": "الإجمالي"
 }
 

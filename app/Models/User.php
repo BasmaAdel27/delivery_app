@@ -76,4 +76,7 @@ class User extends Authenticatable
         $this->hasMany(Order::class, 'driver_id');
     }
 
+    public function bills(){
+        $this->hasMany(Bill::class,'user_id');
+    }
 }

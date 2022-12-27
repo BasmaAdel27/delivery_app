@@ -22,5 +22,6 @@ Route::middleware([\App\Http\Middleware\SuperAdmin::class])->group(function () {
     Route::resource('bills', BillController::class)->except('edit','update','delete');
     Route::put('orders/delivered/{id}', [OrderController::class, 'delivered'])->name('orders.delivered');
     Route::put('orders/rejected/{id}', [OrderController::class, 'rejected'])->name('orders.rejected');
+    Route::get('drivers/financial_dues/{id}', [DriverController::class, 'financial_dues'])->name('drivers.financial_dues');
 });
 
