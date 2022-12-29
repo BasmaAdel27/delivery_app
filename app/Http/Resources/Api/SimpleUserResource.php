@@ -13,9 +13,11 @@ class SimpleUserResource extends JsonResource
               'id' => $this->id,
               'full_name' => $this->full_name ?? '',
               'phone' => $this->phone,
-              'email' => $this->email,
-              'identity_number' => $this->identity_number,
+              'company_name' => $this->company_name,
+              'contact_number' => $this->contact_number,
               'address' => $this->address,
+              'district_name' => $this->district_name,
+              'build_number' => $this->build_number,
               'created_at' => $this->custom_created_at,
         ];
     }
