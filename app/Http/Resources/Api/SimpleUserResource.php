@@ -13,7 +13,8 @@ class SimpleUserResource extends JsonResource
               'id' => $this->id,
               'full_name' => $this->fullname ?? '',
               'phone' => $this->phone,
-              'address' => $this->address,
+              'identity_number' => $this->identity_number,
+              'salary' => $this->salary,
               'created_at' => $this->created_at_date,
         ];
     }

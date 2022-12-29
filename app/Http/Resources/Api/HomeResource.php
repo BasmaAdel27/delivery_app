@@ -13,12 +13,22 @@ class HomeResource extends JsonResource
               'id' => $this->id,
               'order_number' => $this->order_number,
               'price' => $this->price,
-              'order_weight' => $this->id,
-              'order_quantity' => $this->id,
-              'moves_number' => $this->id,
-              'lat' => $this->lat,
-              'lng' => $this->lng,
+              'weight' => $this->weight,
+              'quantity' => $this->quantity,
+              'moves_number' => $this->moves_number,
+              'from' => [
+                    'lat' => $this->lat_start,
+                    'lng' => $this->lng_start,
+                    'address' => $this->address_start
+              ],
+              'to' => [
+                    'lat' => $this->lat_end,
+                    'lng' => $this->lng_end,
+                    'address' => $this->address_end
+              ],
+              'order_pocket' => $this->order_pocket,
               'status' => $this->status,
+              'status_ar' => $this->status_ar,
               'customer' => SimpleUserResource::make($this->customer)
         ];
     }
