@@ -14,7 +14,9 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $orders = Order::where('driver_id', auth()->id())
-              ->when($request->status, fn($q) => $q->where('order_status', $request->status))
+              ->when($request->status, fn($q) => $q->where('status', $request->status))
+              ->when($request->created_from, fn($q) => $q->where('created_at', '>=', $request->created_from))
+              ->when($request->created_to, fn($q) => $q->where('created_at', '<=', $request->created_to))
               ->orderBy('created_at', 'desc')
               ->paginate($request->per_page ?? 15);
 
