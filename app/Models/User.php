@@ -9,6 +9,7 @@ use App\Models\Society\Society;
 use App\Models\State\State;
 use App\Traits\HasAssetsTrait;
 use App\Traits\HasTimestampTrait;
+use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -61,6 +62,10 @@ class User extends Authenticatable
         return $this->first_name . ' ' . $this->last_name;
     }
 
+    public function getCustomCreatedAtAttribute($value)
+    {
+        return Carbon::parse($this->created_at)->translatedFormat('Y-m-d');
+    }
     public function setPasswordAttribute($value)
     {
         return $this->attributes['password'] = Hash::needsRehash($value) ? Hash::make($value) : $value;
