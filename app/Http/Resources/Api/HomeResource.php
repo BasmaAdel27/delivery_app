@@ -2,11 +2,7 @@
 
 namespace App\Http\Resources\Api;
 
-use App\Http\Resources\Api\Dashboard\SimpleUserResource;
-use App\Http\Resources\Api\Home\MealResource;
-use App\Http\Resources\Api\Home\SlideResource;
-use App\Http\Resources\Api\Home\UserInfoResource;
-use App\Http\Resources\Api\Home\VideoResource;
+use App\Http\Resources\Api\SimpleUserResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class HomeResource extends JsonResource
