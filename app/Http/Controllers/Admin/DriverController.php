@@ -40,6 +40,7 @@ class DriverController extends Controller
         if ($data['truck_id']) {
             $truck = Truck::find($data['truck_id']);
             $truck->user_id = $driver->id;
+            $truck->save();
         }
         $driver->user_type='driver';
         $driver->save();

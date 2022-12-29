@@ -22,7 +22,6 @@ class TruckRequest extends FormRequest
               'truck_type' => 'required',
               'truck_model' => 'required',
               'license_expiry'=>'required|after_or_equal:'.$dt,
-                'operating_card'=>'required',
               'operating_cardDate'=>'required',
               'application_date'=>'required',
               'Examination_date'=>'required',
@@ -31,9 +30,13 @@ class TruckRequest extends FormRequest
         if (!$this->isMethod('PUT')) {
             $rules['plate_number']='required|unique:trucks';
             $rules['license_number'] = 'required|numeric|unique:trucks';
+            $rules['operating_card']='required|unique:trucks';
+
         }else{
             $rules['plate_number']='required|unique:trucks,plate_number,'. $this->truck?->id;
             $rules['license_number'] = 'required|numeric|unique:trucks,license_number,'. $this->truck?->id;
+            $rules['operating_card']='required|unique:trucks,operating_card,'.$this->truck?->id;
+
         }
         return $rules;
     }

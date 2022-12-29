@@ -177,7 +177,7 @@
         position: latlng,
         map: map,
         title: 'Set lat/lon values for this property',
-        draggable: true
+        draggable: false
       });
       google.maps.event.addListener(marker, 'dragend', function (a) {
         $("#lat").val(a.latLng.lat());
@@ -195,7 +195,7 @@
         position: latlng,
         map: map,
         title: 'Set lat/lon values for this property',
-        draggable: true
+        draggable: false
       });
       google.maps.event.addListener(marker, 'dragend', function (a) {
         $("#lat2").val(a.latLng.lat());
