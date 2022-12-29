@@ -29,6 +29,7 @@ class HomeResource extends JsonResource
               'order_pocket' => $this->order_pocket,
               'status' => $this->status,
               'status_ar' => $this->status_ar,
+              'created_at' => $this->custom_created_at,
               'customer' => SimpleUserResource::make($this->customer)
         ];
     }
