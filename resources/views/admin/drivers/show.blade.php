@@ -71,7 +71,7 @@
         </div>
         <div class="form-group col-6">
           <label><strong>@lang("truck_number") :</strong></label>
-          {{$driver->truck->plate_number}}
+          {{$driver->truck?->plate_number}}
         </div>
 
 

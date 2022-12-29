@@ -21,7 +21,7 @@ class BillController extends Controller
 
     public function create()
     {
-        $drivers = User::select(DB::raw("CONCAT (first_name,' ',last_name) as name, id"))->pluck('name', 'id');
+        $drivers = User::select(DB::raw("CONCAT (first_name,' ',last_name) as name, id"))->where('user_type','driver')->pluck('name', 'id');
         return view('admin.bills.create', compact('drivers'));
     }
 
