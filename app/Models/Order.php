@@ -26,6 +26,16 @@ class Order extends Model
         return Carbon::parse($this->created_at)->translatedFormat('Y-m-d');
     }
 
+    public function getCustomDateAttribute($value)
+    {
+        return Carbon::parse($this->created_at)->translatedFormat('Y-m-d');
+    }
+
+
+    public function getCustomTimeAttribute($value)
+    {
+        return Carbon::parse($this->created_at)->translatedFormat('H:i A');
+    }
     public function driver()
     {
         return $this->belongsTo(User::class);
