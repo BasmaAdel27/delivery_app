@@ -30,16 +30,16 @@ class OrdersDataTable extends DataTable
                   return view('admin.orders.datatable.action', compact('query'));
               })->editColumn('statuses', function ($query) {
                   return view('admin.orders.datatable.status', compact('query'));
-              })->rawColumns(['user.first_name','customer.first_name','created_at','time','statuses','Action']);
+              })->rawColumns(['created_at','time','statuses','Action']);
     }
 
 
     public function query()
     {
-        $orders= Order::select('orders.*')->with(['driver','customer'])->newQuery();
+        $orders= Order::select('orders.*')->with(['driver','customer'])->latest()->newQuery();
         if ($this->request()->get('date_from') && $this->request()->get('date_to')){
             return Order::select('orders.*')->with(['driver','customer'])->
-            whereBetween('created_at',[$this->request->date_from, $this->request->date_to])->newQuery();
+            whereBetween('created_at',[$this->request->date_from, $this->request->date_to])->latest()->newQuery();
         }
         else{
             return $orders;
@@ -74,8 +74,9 @@ class OrdersDataTable extends DataTable
         return [
               Column::make('id')->title(trans('ID')),
               Column::make('order_number')->orderable(true)->title(trans('order_number')),
-              Column::make('customer.first_name')->orderable(true)->title(trans('customer_name'))->searchable(false)->orderable(false),
+              Column::make('customer.first_name')->orderable(true)->title(trans('customer_name')),
               Column::make('driver.first_name')->orderable(true)->title(trans('driver_name')),
+              Column::make('order_pocket')->orderable(true)->title(trans('order_pocket')),
               Column::make('weight')->orderable(true)->title(trans('weight'))->searchable(false)->orderable(false),
               Column::make('quantity')->orderable(true)->title(trans('quantity'))->searchable(false)->orderable(false)->searchable(false)->orderable(false),
               Column::make('price')->orderable(true)->title(trans('price'))->searchable(false)->orderable(false),

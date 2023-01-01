@@ -39,11 +39,9 @@ class CustomersDataTable extends DataTable
               ->orderBy(1)
               ->lengthMenu([7, 10, 25, 50, 75, 100])
               ->buttons(
-                    Button::make('create'),
-                    Button::make('export'),
-                    Button::make('print'),
-                    Button::make('reset'),
-                    Button::make('reload')
+
+                    Button::make('excel'),
+
               );
     }
 
@@ -73,6 +71,6 @@ class CustomersDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'Admin/Customers_' . date('YmdHis');
+        return 'Admin_Customers_' . date('YmdHis');
     }
 }

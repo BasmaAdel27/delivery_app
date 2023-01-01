@@ -74,6 +74,8 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">@lang('amount')</th>
+            <th scope="col">@lang('description')</th>
+            <th scope="col">@lang('created_at')</th>
           </tr>
           </thead>
           <tbody>
@@ -81,6 +83,8 @@
             <tr>
               <th scope="row"><a href="{{route('admin.bills.show',$bill->id)}}">{{$bill->id}}</a></th>
               <td>{{$bill->amount}}</td>
+              <td>{{$bill->description}}</td>
+              <td>{{$bill->created_at}}</td>
             </tr>
           @endforeach
           <tr>

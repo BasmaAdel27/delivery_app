@@ -20,6 +20,7 @@ class CreateOrdersTable extends Migration
             $table->float('price');
             $table->string('weight');
             $table->integer('quantity');
+            $table->string('product_type');
             $table->integer('moves_number');
             $table->string('lat_start');
             $table->string('lng_start');

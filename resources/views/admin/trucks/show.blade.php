@@ -35,7 +35,7 @@
 
         <div class="form-group col-6">
           <label><strong>@lang("License_expiry") :</strong></label>
-          {{$truck->License_expiry}}
+          {{$truck->license_expiry}}
         </div>
         <div class="form-group col-6">
           <label><strong>@lang("operating_card") :</strong></label>
@@ -48,6 +48,10 @@
         <div class="form-group col-6">
           <label><strong>@lang("application_date") :</strong></label>
           {{$truck->application_date}}
+        </div>
+        <div class="form-group col-6">
+          <label><strong>@lang("insurance_date") :</strong></label>
+          {{$truck->insurance_date}}
         </div>
 
 

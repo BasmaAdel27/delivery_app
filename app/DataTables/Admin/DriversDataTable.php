@@ -28,7 +28,7 @@ class DriversDataTable extends DataTable
 
     public function query()
     {
-        return User::where('user_type','driver')->select('users.*')->with('truck')->newQuery();
+        return User::where('user_type','driver')->select('users.*')->with('truck')->oldest()->newQuery();
     }
 
     public function html()
@@ -40,11 +40,9 @@ class DriversDataTable extends DataTable
               ->orderBy(1)
               ->lengthMenu([7, 10, 25, 50, 75, 100])
               ->buttons(
-                    Button::make('create'),
-                    Button::make('export'),
-                    Button::make('print'),
-                    Button::make('reset'),
-                    Button::make('reload')
+
+                    Button::make('excel'),
+
               );
     }
 
@@ -59,8 +57,8 @@ class DriversDataTable extends DataTable
               Column::make('license_expiry')->orderable(true)->title(trans('license_expiry')),
               Column::make('phone')->orderable(true)->title(trans('phone')),
               Column::make('address')->orderable(true)->title(trans('address')),
-              Column::make('created_at')->title(trans('created_at')),
-              Column::make('updated_at')->title(trans('updated_at')),
+              Column::make('created_at')->orderable(true)->title(trans('created_at')),
+              Column::make('updated_at')->orderable(true)->title(trans('updated_at')),
               Column::make('Action')->title(trans('action'))->searchable(false)->orderable(false)
         ];
     }
@@ -72,6 +70,6 @@ class DriversDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'Admin/Drivers_' . date('YmdHis');
+        return 'Admin_Drivers_' . date('YmdHis');
     }
 }

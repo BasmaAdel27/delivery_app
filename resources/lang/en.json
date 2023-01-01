@@ -91,7 +91,21 @@
   "bills": "Bills",
   "amount": "Amount",
   "description": "Description",
-   "bill_details": "Bill Details"
+   "bill_details": "Bill Details",
+  "add_driver": "Add Driver",
+  "add_order": "Add Order",
+  "add_truck": "Add Truck",
+  "add_customer": "Add Customer",
+  "orders_list": "List of Orders",
+  "customers_list":"List of Customers",
+  "drivers_list": "List of Drivers",
+  "trucks_list": "List of Trucks",
+  "insurance_date": "Insurance Date",
+  "product_type": "Type of Product",
+  "change_driver": "Change Driver",
+  "License_expiry": "License Expiry",
+  "cancel": "Cancel",
+  "save": "Save"
 }
 
 

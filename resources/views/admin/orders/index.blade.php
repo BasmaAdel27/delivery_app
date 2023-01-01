@@ -4,8 +4,6 @@
   <div class="card mt-5">
     <div class="card-header d-flex justify-content-between">
       <h2 class="mb-4">@lang('orders')</h2>
-      <a href="{{ route('admin.orders.create') }}"
-         class="btn btn-outline-primary btn-lg font-weight-bold">@lang('add')</a>
     </div>
     <div class="card-header">
       @include('admin.orders._date_search')

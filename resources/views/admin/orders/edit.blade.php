@@ -17,6 +17,11 @@
               <label>@lang("price")</label>
               <input type="text" class="form-control" name='price' value="{{old('price',$order->price)}}">
             </div>
+            <div class="row">
+            <div class="form-group col-6">
+              <label>@lang("product_type")</label>
+              <input type="text" class="form-control" name='product_type' value="{{old('product_type',$order->product_type)}}">
+            </div>
             <div class="form-group col-6">
               <label>@lang("quantity")</label>
               <input type="number" class="form-control" name='quantity' value="{{old('quantity',$order->quantity)}}">

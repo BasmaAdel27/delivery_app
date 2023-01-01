@@ -103,6 +103,21 @@
   "bills_details": "تفاصيل سندات الصرف",
   "bills_total": "إجمالي سندات الصرف",
   "pockets_total": "إجمالي مصروفات الرحلات ",
-  "total": "الإجمالي"
+  "total": "الإجمالي",
+  "add_driver": "اضافه سائق",
+  "add_order": "اضافه طلب",
+  "add_truck": "اضافه شاحنه",
+  "add_customer": "اضافه عميل",
+  "orders_list": "قائمه الطلبات",
+  "customers_list":"قائمه العملاء",
+  "drivers_list": "قائمه السائقين",
+  "trucks_list": "قائمه الشاحنات",
+  "insurance_date": "تاريخ التأمين",
+  "product_type": "نوع المنتج",
+  "License_expiry": "تاريخ انتهاء الرخصه",
+  "change_driver": "تغيير السائق",
+  "cancel": "إلغاء",
+  "save": "حفظ"
+
 }
 

@@ -98,4 +98,17 @@ class OrderController extends Controller
         $order->save();
         return redirect()->back()->with('success', trans('updated_successfully'));
     }
+
+    public function change_driver(Request $request,$id){
+        $this->validate($request, [
+              'driver_id' => 'required',
+        ],[
+              'driver_id.required'=>'اسم السائق مطلوب'
+        ]);
+        $order= Order::find($id);
+        $order->driver_id=$request->driver_id;
+        $order->save();
+        return redirect()->back()->with('success', trans('updated_successfully'));
+
+    }
 }

@@ -11,7 +11,7 @@ class Truck extends Model
     use HasFactory, HasTimestampTrait;
 
     protected $fillable = ['plate_number','operating_card','operating_cardDate','application_date','Examination_date',
-          'truck_type', 'truck_model', 'license_number', 'license_expiry'];
+          'truck_type', 'truck_model', 'license_number', 'license_expiry','insurance_date'];
 
 
     public function driver()

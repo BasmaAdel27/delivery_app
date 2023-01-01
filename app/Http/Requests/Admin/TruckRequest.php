@@ -25,6 +25,7 @@ class TruckRequest extends FormRequest
               'operating_cardDate'=>'required',
               'application_date'=>'required',
               'Examination_date'=>'required',
+              'insurance_date'=>'nullable'
 
         ];
         if (!$this->isMethod('PUT')) {

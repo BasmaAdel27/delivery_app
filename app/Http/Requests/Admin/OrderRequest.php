@@ -28,7 +28,8 @@ class OrderRequest extends FormRequest
             'lat_end'=>'required',
             'lng_end'=>'required',
             'address_end'=>'required',
-            'order_pocket'=>'nullable'
+            'order_pocket'=>'nullable',
+            'product_type'=>'nullable'
 
         ];
     }

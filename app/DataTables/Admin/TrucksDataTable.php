@@ -38,11 +38,9 @@ class TrucksDataTable extends DataTable
               ->orderBy(1)
               ->lengthMenu([7, 10, 25, 50, 75, 100])
               ->buttons(
-                    Button::make('create'),
-                    Button::make('export'),
-                    Button::make('print'),
-                    Button::make('reset'),
-                    Button::make('reload')
+
+                    Button::make('excel'),
+
               );
     }
 
@@ -57,8 +55,8 @@ class TrucksDataTable extends DataTable
               Column::make('truck_model')->orderable(true)->title(trans('truck_model')),
               Column::make('license_number')->orderable(true)->title(trans('license_number')),
               Column::make('license_expiry')->orderable(true)->title(trans('license_expiry')),
-              Column::make('created_at')->title(trans('created_at')),
-              Column::make('updated_at')->title(trans('updated_at')),
+              Column::make('created_at')->orderable(true)->title(trans('created_at'))->searchable(true),
+              Column::make('updated_at')->orderable(true)->title(trans('updated_at')),
               Column::make('Action')->title(trans('action'))->searchable(false)->orderable(false)
         ];
     }
@@ -70,6 +68,6 @@ class TrucksDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'Admin/Trucks_' . date('YmdHis');
+        return 'Admin_Trucks_' . date('YmdHis');
     }
 }

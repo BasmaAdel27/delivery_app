@@ -51,6 +51,10 @@
               <label>@lang('application_date')</label>
               <input type="date" name="application_date" class="form-control" value="{{ old('application_date')}}">
             </div>
+            <div class="form-group col-6">
+              <label>@lang('insurance_date')</label>
+              <input type="date" name="insurance_date" class="form-control" value="{{ old('insurance_date')}}">
+            </div>
 
           </div>
             <div class="row">
