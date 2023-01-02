@@ -37,7 +37,7 @@ class HomeController extends Controller
             return failedResponse(Lang::get('can_not_updated_delivered_order'));
         }
         $order->update([
-              'status' => $order->status
+              'status' => $request->status
         ]);
 
         // TODO:: send email or notification to admin
