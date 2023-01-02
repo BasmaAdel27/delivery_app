@@ -30,7 +30,7 @@ class UserFactory extends Factory
               'card_expiry' => $this->faker->dateTimeInInterval('-1 day', '+6 years'),
               'license_expiry' => $this->faker->dateTimeInInterval('-1 day', '+6 years'),
               'delegation_date' => $this->faker->dateTimeInInterval('-1 day', '+6 years'),
-              'created_at' => $this->faker->dateTimeInInterval('-1 week', '+0 days'),
+              'created_at' => $this->faker->dateTimeInInterval('-1 week', '+1 week'),
         ];
     }
 
