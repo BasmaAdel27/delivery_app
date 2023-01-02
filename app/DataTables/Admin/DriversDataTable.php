@@ -3,6 +3,7 @@
 namespace App\DataTables\Admin;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Html\Editor\Editor;
@@ -20,9 +21,11 @@ class DriversDataTable extends DataTable
                 return $query->first_name .' '. $query->last_name;
             })->editColumn('truck.plate_number', function ($query) {
                 return $query->truck?->plate_number;
+            })->editColumn('created_at', function ($query) {
+                return Carbon::parse($query->created_at)->format('Y-m-d');
             })->editColumn('Action', function ($query) {
                 return view('admin.drivers.datatable.action', compact('query'));
-            })->rawColumns(['first_name','Action']);
+            })->rawColumns(['created_at','first_name','Action']);
 
     }
 

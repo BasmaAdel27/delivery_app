@@ -3,6 +3,7 @@
 namespace App\DataTables\Admin;
 
 use App\Models\Order;
+use Carbon\Carbon;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Html\Editor\Editor;
@@ -23,7 +24,7 @@ class OrdersDataTable extends DataTable
               })->editColumn('time', function ($query) {
                   return date('H:i:s A', strtotime($query->created_at));
               })->editColumn('created_at', function ($query) {
-                  return $query->created_at->toDateString();
+                  return Carbon::parse($query->created_at)->format('Y-m-d');
               })->editColumn('updated_at', function ($query) {
                   return $query->updated_at->toDateString();
               })->editColumn('Action', function ($query) {

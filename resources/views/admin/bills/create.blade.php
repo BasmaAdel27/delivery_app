@@ -25,13 +25,22 @@
             </select>
           </div>
           <div class="form-group col-6">
-            <label>@lang("amount")</label>
-            <input type="text" class="form-control" name='amount' value="{{ old('amount')}}">
+            <label>@lang('truck_number')</label>
+            <select name="truck_id" id="truck" class="form-control">
+              <option value="">@lang('select')</option>
+              @foreach ($trucks as $id => $name)
+                <option value="{{$id}}"  {{ old('truck_id') == $id ? 'selected' : '' }}>{{$name}}</option>
+              @endforeach
+            </select>
           </div>
 
           <div class="form-group col-12">
             <label>@lang("description")</label>
             <textarea  class="form-control" name='description' >{{ old('description')}}</textarea>
+          </div>
+          <div class="form-group col-6">
+            <label>@lang("amount")</label>
+            <input type="text" class="form-control" name='amount' value="{{ old('amount')}}">
           </div>
         </div>
         <div class="row">

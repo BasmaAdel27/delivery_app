@@ -16,4 +16,8 @@ class Bill extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+    public function truck()
+    {
+        return $this->belongsTo(Truck::class, 'truck_id');
+    }
 }

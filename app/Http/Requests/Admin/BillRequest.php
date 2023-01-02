@@ -16,7 +16,8 @@ class BillRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id'=>'required',
+            'user_id'=>'nullable',
+            'truck_id'=>'nullable',
             'amount'=>'required',
             'description'=>'required'
         ];

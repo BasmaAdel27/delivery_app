@@ -14,7 +14,12 @@
       <div class="row">
         <div class="form-group col-6">
           <label><strong>@lang("name") :</strong></label>
-          {{$bill->driver->getFullNameAttribute()}}
+          {{$bill->driver?->getFullNameAttribute()}}
+        </div>
+
+          <div class="form-group col-6">
+          <label><strong>@lang("truck_number") :</strong></label>
+          {{$bill->truck?->plate_number}}
         </div>
         <div class="form-group col-6">
           <label><strong>@lang("amount") :</strong></label>

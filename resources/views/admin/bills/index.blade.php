@@ -8,6 +8,10 @@
         <a href="{{ route('admin.bills.create') }}"
            class="btn btn-outline-primary btn-lg font-weight-bold">@lang('add')</a>
     </div>
+    <div class="card-header">
+      @include('admin.bills._date_search')
+    </div>
+
     <div class="card-body table-responsive">
       {!! $dataTable->table([
       'class' => 'table table-striped table-hover Main-List'
