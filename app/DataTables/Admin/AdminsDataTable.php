@@ -25,7 +25,7 @@ class AdminsDataTable extends DataTable
 
     public function query()
     {
-        return User::where('user_type','admin')->orwhere('user_type','employee')->select('users.*')->newQuery();
+        return User::whereIn('user_type',['employee','admin'])->select('users.*')->newQuery();
     }
 
 
