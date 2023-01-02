@@ -3,14 +3,11 @@
 namespace App\Providers;
 
 use App\Models\Order;
-use App\Models\Setting;
-use App\Models\StaticPage\StaticPage;
-use App\Models\Subscription;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-use function PHPUnit\Framework\isEmpty;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,8 +28,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(Order $order)
     {
-        \Schema::defaultStringLength(191);
-
+        Schema::defaultStringLength(191);
         $drivers=User::whereHas('truck',fn($q) => $q->where('user_id','!=',null))
               ->orwhereHas('truck',fn($q) => $q->where('user_id',$order->driver?->id))
               ->select(DB::raw("CONCAT (first_name,' ',last_name) as name, id"))->pluck('name', 'id');
