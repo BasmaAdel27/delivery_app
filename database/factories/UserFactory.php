@@ -27,10 +27,10 @@ class UserFactory extends Factory
               'delegation' => $this->faker->boolean,
               'salary' => $this->faker->randomNumber(4, true),
               'address' => $this->faker->address,
-              'card_expiry' => $this->faker->dateTimeBetween('now', '+6 years'),
-              'license_expiry' => $this->faker->dateTimeBetween('now', '+6 years'),
-              'delegation_date' => $this->faker->dateTimeBetween('now', '+6 years'),
-              'created_at' => $this->faker->dateTimeBetween('now', '-2 years'),
+              'card_expiry' => $this->faker->dateTimeInInterval('-1 day', '+6 years'),
+              'license_expiry' => $this->faker->dateTimeInInterval('-1 day', '+6 years'),
+              'delegation_date' => $this->faker->dateTimeInInterval('-1 day', '+6 years'),
+              'created_at' => $this->faker->dateTimeInInterval('-1 week', '+0 days'),
         ];
     }
 
