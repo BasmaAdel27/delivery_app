@@ -69,17 +69,23 @@
 
                 <div class="map" lat="30.047880451278246" lng="31.23546501295588" id="map"
                      style="width: 100%; height: 300px;"></div>
-                <div class="form_area">
-                  <input type="text" name="lat_start" id="lat" hidden value="{{old('lat_start')}}">
-                  <input type="text" name="lng_start" id="lng"  hidden value="{{old('lng_start')}}">
-                </div>
 
               </fieldset>
+            </div>
+
+            <div class="form-group col-6" style="margin-top: 10px">
+              <label>@lang('latitude')</label>
+              <input type="text" class="form-control" name="lat_start" id="lat" value="{{old('lat_start')}}">
+            </div>
+            <div class="form-group col-6" style="margin-top: 10px">
+              <label>@lang('longitude')</label>
+              <input type="text" name="lng_start" id="lng"  class="form-control" value="{{old('lng_start')}}">
             </div>
             <div class="form-group col-12" style="margin-top: 10px">
               <label>@lang("address")</label>
               <input type="text" class="form-control" name='address_start' id="location" value="{{old('address_start')}}">
             </div>
+
             <hr>
             <p class="card-description">
               @lang('order_end')
@@ -92,12 +98,17 @@
 
                 <div class="map2" lat="30.047880451278246" lng="31.23546501295588" id="map2"
                      style="width: 100%; height: 300px;"></div>
-                <div class="form_area">
-                  <input type="text" name="lat_end" id="lat2" value="{{old('lat_end')}}" hidden>
-                  <input type="text" name="lng_end" id="lng2" value="{{old('lng_end')}}" hidden>
-                </div>
 
               </fieldset>
+            </div>
+
+            <div class="form-group col-6" style="margin-top: 10px">
+              <label>@lang('latitude')</label>
+              <input type="text" class="form-control" name="lat_end" id="lat2" value="{{old('lat_end')}}">
+            </div>
+            <div class="form-group col-6" style="margin-top: 10px">
+              <label>@lang('longitude')</label>
+              <input type="text" name="lng_end" id="lng2"  class="form-control" value="{{old('lng_end')}}">
             </div>
             <div class="form-group col-12" style="margin-top: 10px">
               <label>@lang("address")</label>

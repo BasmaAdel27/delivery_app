@@ -45,9 +45,17 @@
         <p class="card-description col-12">
           @lang('order_start')
         </p>
-        <div class="form-group col-6">
+        <div class="form-group col-12">
           <label><strong>@lang("address") :</strong></label>
           {{$order->address_start}}
+        </div>
+        <div class="form-group col-6">
+          <label><strong>@lang("latitude") :</strong></label>
+          {{$order->lat_start}}
+        </div>
+        <div class="form-group col-6">
+          <label><strong>@lang("longitude") :</strong></label>
+          {{$order->lng_start}}
         </div>
         <div class="form-group col-12">
           <div class="col-lg-9">
@@ -63,9 +71,17 @@
         <p class="card-description col-12">
           @lang('order_end')
         </p>
-        <div class="form-group col-6">
+        <div class="form-group col-12">
           <label><strong>@lang("address") :</strong></label>
           {{$order->address_end}}
+        </div>
+        <div class="form-group col-6">
+          <label><strong>@lang("latitude") :</strong></label>
+          {{$order->lat_end}}
+        </div>
+        <div class="form-group col-6">
+          <label><strong>@lang("longitude") :</strong></label>
+          {{$order->lng_end}}
         </div>
         <div class="form-group col-12">
           <div class="col-lg-9">

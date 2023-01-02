@@ -29,6 +29,12 @@
       </div>
     </li>
     <li class="nav-item">
+      <a class="nav-link" href="{{route('admin.reports.index')}}">
+        <i class="mdi mdi-receipt menu-icon"></i>
+        <span class="menu-title">@lang('reports_drivers')</span>
+      </a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" href="{{route('admin.bills.index')}}">
         <i class="mdi mdi-cash-multiple menu-icon"></i>
         <span class="menu-title">@lang('bills')</span>

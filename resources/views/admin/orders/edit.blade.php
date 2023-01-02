@@ -17,7 +17,6 @@
               <label>@lang("price")</label>
               <input type="text" class="form-control" name='price' value="{{old('price',$order->price)}}">
             </div>
-            <div class="row">
             <div class="form-group col-6">
               <label>@lang("product_type")</label>
               <input type="text" class="form-control" name='product_type' value="{{old('product_type',$order->product_type)}}">
@@ -69,12 +68,17 @@
 
                 <div class="map" lat="{{$order->lat_start}}" lng="{{$order->lng_start}}" id="map"
                      style="width: 100%; height: 300px;"></div>
-                <div class="form_area">
-                  <input type="text" name="lat_start" id="lat" hidden value="{{old('lat_start',$order->lat_start)}}">
-                  <input type="text" name="lng_start" id="lng"  hidden value="{{old('lng_start',$order->lng_start)}}">
-                </div>
 
               </fieldset>
+            </div>
+
+            <div class="form-group col-6" style="margin-top: 10px">
+              <label>@lang('latitude')</label>
+              <input type="text" class="form-control" name="lat_start" id="lat" value="{{old('lat_start',$order->lat_start)}}">
+            </div>
+            <div class="form-group col-6" style="margin-top: 10px">
+              <label>@lang('longitude')</label>
+              <input type="text" name="lng_start" id="lng"  class="form-control" value="{{old('lng_start',$order->lng_start)}}">
             </div>
             <div class="form-group col-12" style="margin-top: 10px">
               <label>@lang("address")</label>
@@ -92,12 +96,17 @@
 
                 <div class="map2" lat="{{$order->lat_end}}" lng="{{$order->lng_end}}" id="map2"
                      style="width: 100%; height: 300px;"></div>
-                <div class="form_area">
-                  <input type="text" name="lat_end" id="lat2" value="{{old('lat_end',$order->lat_end)}}" hidden>
-                  <input type="text" name="lng_end" id="lng2" value="{{old('lng_end',$order->lng_end)}}" hidden>
-                </div>
+
 
               </fieldset>
+            </div>
+            <div class="form-group col-6" style="margin-top: 10px">
+              <label>@lang('latitude')</label>
+              <input type="text" class="form-control" name="lat_end" id="lat2" value="{{old('lat_end',$order->lat_end)}}">
+            </div>
+            <div class="form-group col-6" style="margin-top: 10px">
+              <label>@lang('longitude')</label>
+              <input type="text" name="lng_end" id="lng2"  class="form-control" value="{{old('lng_end',$order->lng_end)}}">
             </div>
             <div class="form-group col-12" style="margin-top: 10px">
               <label>@lang("address")</label>

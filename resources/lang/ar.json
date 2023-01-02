@@ -117,7 +117,12 @@
   "License_expiry": "تاريخ انتهاء الرخصه",
   "change_driver": "تغيير السائق",
   "cancel": "إلغاء",
-  "save": "حفظ"
+  "save": "حفظ",
+  "reports_drivers": "تقارير السائقين",
+  "order_counts": "عدد الرحلات",
+  "order_pockets": "مصاريف الرحلات",
+  "latitude": "خط العرض",
+  "longitude": "خط الطول"
 
 }
 

@@ -48,11 +48,7 @@ class User extends Authenticatable
           'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
+
     protected $casts = [
           'email_verified_at' => 'datetime',
     ];
@@ -83,5 +79,39 @@ class User extends Authenticatable
 
     public function bills(){
         $this->hasMany(Bill::class,'user_id');
+    }
+
+    public function SumBills($driver_id){
+        $this->date_from = Carbon::parse(request('date_from'))->startOfDay()->toDateTimeString();
+        $this->date_to   = Carbon::parse(request('date_to'))->endOfDay()->toDateTimeString();
+        $bills=Bill::where('user_id',$driver_id)->sum('amount');
+        if ($this->date_from && $this->date_to){
+            return Bill::where('user_id',$driver_id)->
+            whereBetween('created_at',[$this->date_from, $this->date_to])->get()->sum('amount');
+        }else{
+            return $bills;
+        }
+    }
+    public function countOrders($driver_id){
+        $this->date_from = Carbon::parse(request('date_from'))->startOfDay()->toDateTimeString();
+        $this->date_to   = Carbon::parse(request('date_to'))->endOfDay()->toDateTimeString();
+        $orders=Order::where('driver_id',$driver_id)->count();
+        if ($this->date_from && $this->date_to){
+            return Order::where('driver_id',$driver_id)->
+            whereBetween('created_at',[$this->date_from, $this->date_to])->count();
+        }else{
+            return $orders;
+        }
+    }
+    public function SumPockets($driver_id){
+        $this->date_from = Carbon::parse(request('date_from'))->startOfDay()->toDateTimeString();
+        $this->date_to   = Carbon::parse(request('date_to'))->endOfDay()->toDateTimeString();
+        $orders=Order::where('driver_id',$driver_id)->sum('order_pocket');
+        if ($this->date_from && $this->date_to){
+            return Order::where('driver_id',$driver_id)->
+            whereBetween('created_at',[$this->date_from, $this->date_to])->sum('order_pocket');
+        }else{
+            return $orders;
+        }
     }
 }

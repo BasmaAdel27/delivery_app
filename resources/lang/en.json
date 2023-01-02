@@ -105,7 +105,13 @@
   "change_driver": "Change Driver",
   "License_expiry": "License Expiry",
   "cancel": "Cancel",
-  "save": "Save"
+  "save": "Save",
+  "reports_drivers": "Drivers Reports",
+  "order_counts": "Count of Orders",
+  "order_pockets": "Pockets of Orders",
+  "latitude": "Latitude",
+  "longitude": "Longitude"
+
 }
 
 
