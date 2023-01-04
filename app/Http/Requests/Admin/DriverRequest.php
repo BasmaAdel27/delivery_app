@@ -32,7 +32,7 @@ class DriverRequest extends FormRequest
 
         ];
         if (!$this->isMethod('PUT')) {
-            $rules['password'] = 'required|min:8|confirmed';
+            $rules['password'] = 'required|min:6|confirmed';
             $rules['identity_number'] = 'required|min:14|numeric|unique:users';
             $rules['license_number'] = 'required|numeric|unique:users';
             $rules['email'] = 'nullable|unique:users,email';
