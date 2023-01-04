@@ -35,7 +35,7 @@
           <div class="form-group col-6">
             <label>@lang('card')</label>
             <select name="card" class="form-control" >
-              <option value="">@lang('select')</option>
+              <option>@lang('select')</option>
               <option value="1" {{ old('card') == 1 ? 'selected' : '' }}>@lang('yes')</option>
               <option value="0" {{ old('card') == 0 ? 'selected' : '' }}>@lang('no')</option>
             </select>
@@ -57,8 +57,8 @@
           <div class="form-group col-6">
             <label>@lang('delegation')</label>
             <select name="delegation" class="form-control">
-              <option value="">@lang('select')</option>
-              <option value="1" {{ old('delegation') == 0 ? 'selected' : '' }}>@lang('yes')</option>
+              <option>@lang('select')</option>
+              <option value="1" {{ old('delegation') == 1 ? 'selected' : '' }}>@lang('yes')</option>
               <option value="0" {{ old('delegation') == 0 ? 'selected' : '' }}>@lang('no')</option>
             </select>
           </div>
