@@ -42,6 +42,11 @@
             <label>@lang("amount")</label>
             <input type="text" class="form-control" name='amount' value="{{ old('amount')}}">
           </div>
+
+          <div class="form-group col-6">
+            <label>@lang("date")</label>
+            <input type="date" class="form-control" name='date' value="{{ old('date')}}">
+          </div>
         </div>
         <div class="row">
           <div class="form-group col-6">

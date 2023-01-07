@@ -8,5 +8,13 @@ return [
             'content' => [
                   'new_message' => 'New Message'
             ]
+      ],
+      'orders' => [
+            'status' => [
+                  'pending' => 'Pending',
+                  'shipping' => 'Shipping',
+                  'delivered' => 'Delivered',
+                  'rejected' => 'Rejected',
+            ]
       ]
 ];

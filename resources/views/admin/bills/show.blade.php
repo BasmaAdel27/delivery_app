@@ -29,7 +29,10 @@
           <label><strong>@lang("description") :</strong></label>
           {{$bill->description}}
         </div>
-
+        <div class="form-group col-6">
+          <label><strong>@lang("date") :</strong></label>
+          {{$bill?->date}}
+        </div>
       </div>
 
 

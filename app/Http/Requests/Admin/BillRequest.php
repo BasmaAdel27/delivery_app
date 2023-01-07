@@ -19,7 +19,8 @@ class BillRequest extends FormRequest
             'user_id'=>'nullable',
             'truck_id'=>'nullable',
             'amount'=>'required',
-            'description'=>'required'
+            'description'=>'required',
+            'date'=>'required|after_or_equal:today'
         ];
     }
 }

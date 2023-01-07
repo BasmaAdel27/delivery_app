@@ -19,6 +19,7 @@ class CreateBillsTable extends Migration
             $table->foreignId('truck_id')->nullable()->constrained('trucks')->nullOnDelete();
             $table->double('amount');
             $table->text('description')->nullable();
+            $table->date('date')->nullable();
             $table->timestamps();
         });
     }
