@@ -11,8 +11,7 @@ class Customer extends Model
 {
     use HasFactory, HasTimestampTrait;
 
-    protected $fillable=['first_name','last_name','company_name','commercial_register',
-          'phone','address','contact_number','build_number','district_name','tax_number'];
+    protected $guarded = [];
 
 
     public function getFullNameAttribute() // notice that the attribute name is in CamelCase.
