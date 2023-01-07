@@ -12,7 +12,7 @@ return [
       'orders' => [
             'status' => [
                   'pending' => 'قيد الانتظار',
-                  'shipping' => 'تم الشحن',
+                  'shipping' => 'جاري التوصيل',
                   'delivered' => 'تم التوصيل',
                   'rejected' => 'مرفوض',
             ]
