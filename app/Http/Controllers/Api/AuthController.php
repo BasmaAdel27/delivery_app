@@ -17,7 +17,6 @@ class AuthController extends Controller
     public function login(AuthRequest $request)
     {
         $data = $request->validated();
-
         if (!in_array($data['phone'], User::pluck('phone')->toArray())) {
             return failedResponse(Lang::get('phone_not_correct'));
         }

@@ -40,7 +40,6 @@ class HomeController extends Controller
               'status' => $request->status,
               'status_ar' => __('mobile.orders.status.' . $request->status),
         ]);
-
         // TODO:: send email or notification to admin
         return successResponse(Lang::get('updated_successfully'));
     }
