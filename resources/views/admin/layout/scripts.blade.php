@@ -17,5 +17,7 @@
 @if (app()->getLocale() == 'ar')
   <script src="{{ asset('adminPanel/vendors/bootstrap-rtl/bootstrap.js') }}"></script>
 @endif
+<script src="{{ asset('js/custom.js') }}"></script>
+<script src="{{ asset('js/printThis.js') }}"></script>
 
 @yield('scripts')
